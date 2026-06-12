@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ZEFIRO — About Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="custom.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.htm"><img src="images/logo.png"> ZEFIRO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.htm">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="aboutus.htm">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="theproject.htm">The Project</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.htm">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto hero-content">
+                <img src="images/logo-w.png">
+                <h1 class="fw-light">THE TEAM</h1>
+                <p class="lead text-body-secondary">A balance of multidisciplinary talents.</p>
+                <p class="lead text-body-paragraph">Zefiro brings together an architect, a naval engineer and a
+                    management engineer — three disciplines that converge into a single, coherent vision for
+                    the future of water transport.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!--
+        TEAM SCROLL SECTION
+        ─────────────────────────────────────────────────────
+        .team-track      — tall scroll "rail" (300vh), position:relative
+          .team-sticky   — sticky container, both columns fixed in viewport
+            .team-left   — left col: stacked text panels (crossfade)
+            .team-right  — right col: stacked photos (crossfade)
+          .team-triggers — invisible divs 100vh each that fire IO events
+    -->
+    <div class="team-track">
+
+        <!-- sticky frame: stays in viewport while track scrolls -->
+        <div class="team-sticky">
+
+            <!-- LEFT: text crossfade -->
+            <div class="team-left">
+                <div class="team-text active" id="text-mario">
+                    <p class="team-role">Architect &amp; Industrial Designer</p>
+                    <h2 class="team-name">Mario Bonelli</h2>
+                    <p class="team-bio">Novara, 1967. An architect who graduated from the
+                        <strong>Politecnico di Milano</strong> with a thesis project for a public transport
+                        vessel designed for lagoon waters. He also trained as an industrial designer at the
+                        Scuola Politecnica di Design in Milan, and has worked abroad on major construction
+                        projects. He has run his own architecture and design practice in Milan since 1992.
+                        A sailor, regatta competitor and navigator — from the Mediterranean to the Atlantic
+                        and the Arctic. Since 2005, he has focused primarily on product design in the
+                        industrial and nautical sectors, designing both production-run and one-off vessels.
+                        Endowed with lateral thinking, he has a knack for bringing original and
+                        unconventional ideas down to earth, transforming them with ingenuity, creativity
+                        and method into feasible projects.</p>
+                </div>
+
+                <div class="team-text" id="text-paolo">
+                    <p class="team-role">Naval Engineer</p>
+                    <h2 class="team-name">Paolo Portinari</h2>
+                    <p class="team-bio">Milan, 1973. Specializing in <strong>yacht design</strong>,
+                        computational fluid dynamics and the engineering of composite products, he has been
+                        working for over thirty years in the field of design and the development of complex
+                        objects, from initial design through to final production. He has designed and
+                        collaborated on the design of numerous sailing and motor boats, winning prestigious
+                        awards for design and engineering. He has sailed on sailing yachts of all types and
+                        sizes, serving as helmsman, mainsail trimmer, tactician and skipper in coastal and
+                        ocean races, from monohulls to large ocean-going multihulls.</p>
+                </div>
+
+                <div class="team-text" id="text-francesco">
+                    <p class="team-role">Management Engineer</p>
+                    <h2 class="team-name">Francesco Fiorentini</h2>
+                    <p class="team-bio">Born in 1964, an <strong>engineer</strong> from the
+                        <strong>Politecnico di Milano</strong>. Francesco began his career at the CNR when
+                        artificial intelligence was still the stuff of science fiction. After gaining
+                        experience in Germany and Austria, he joined the Cannon Group in 1995, building —
+                        and initially, selling — industrial machinery. Since then, he has held various
+                        roles, always working hands-on with technology. Always curious and a bit of a nerd,
+                        he sees innovation as a never-ending adventure. Outside of work, he goes trail
+                        running, skiing, plays tennis and enjoys time with his family. He loves the sea,
+                        although — like a true engineer — he tends to see it more as a place for sailing
+                        than for sunbathing.</p>
+                </div>
+            </div>
+
+            <!-- RIGHT: photo crossfade -->
+            <div class="team-right">
+                <div class="team-photo-frame">
+                    <img src="images/team-mario.png"     class="team-photo active" id="photo-mario"     alt="Mario Bonelli">
+                    <img src="images/team-paolo.png"     class="team-photo"        id="photo-paolo"     alt="Paolo Portinari">
+                    <img src="images/team-francesco.png" class="team-photo"        id="photo-francesco" alt="Francesco Fiorentini">
+                </div>
+                <!-- dot nav -->
+                <div class="team-dots">
+                    <button class="team-dot active" data-member="mario"     aria-label="Mario Bonelli"></button>
+                    <button class="team-dot"        data-member="paolo"     aria-label="Paolo Portinari"></button>
+                    <button class="team-dot"        data-member="francesco" aria-label="Francesco Fiorentini"></button>
+                </div>
+            </div>
+
+        </div><!-- end .team-sticky -->
+
+        <!-- invisible scroll triggers — one per person, 100vh each -->
+        <div class="team-triggers" aria-hidden="true">
+            <div class="team-trigger" data-member="mario"></div>
+            <div class="team-trigger" data-member="paolo"></div>
+            <div class="team-trigger" data-member="francesco"></div>
+        </div>
+
+    </div><!-- end .team-track -->
+
+
+    <!-- PARTNER CTA -->
+    <div class="container">
+        <section class="row my-5">
+            <div class="col-lg-6 col-md-8">
+                <h2 class="fw-light">Join the project</h2>
+                <p class="lead">We are looking for the right partner to bring Zefiro to the water.</p>
+                <a href="contact.htm" class="btn btn-primary my-2">Contact Us</a>
+            </div>
+        </section>
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="footer mt-5">
+        <div class="bg-primary text-white text-center py-5">
+            <div class="container">
+                <h2 class="fw-light mb-2">Become a Partner</h2>
+                <p class="lead mb-4">We are looking for the right partner to bring Zefiro to the water.</p>
+                <a href="contact.htm" class="btn btn-light btn-lg px-4">Contact Us</a>
+            </div>
+        </div>
+        <div class="bg-dark text-white py-4">
+            <div class="container">
+                <div class="row align-items-center gy-3">
+                    <div class="col-md-4 text-center text-md-start">
+                        <img src="images/logo-w.png" alt="Zefiro" style="height:32px;">
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <ul class="list-inline mb-0 small">
+                            <li class="list-inline-item"><a href="index.htm" class="text-white-50 text-decoration-none">Home</a></li>
+                            <li class="list-inline-item text-white-50">·</li>
+                            <li class="list-inline-item"><a href="aboutus.htm" class="text-white-50 text-decoration-none">About Us</a></li>
+                            <li class="list-inline-item text-white-50">·</li>
+                            <li class="list-inline-item"><a href="theproject.htm" class="text-white-50 text-decoration-none">The Project</a></li>
+                            <li class="list-inline-item text-white-50">·</li>
+                            <li class="list-inline-item"><a href="contact.htm" class="text-white-50 text-decoration-none">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 text-center text-md-end">
+                        <small class="text-white-50">&copy; 2025 Zefiro. All rights reserved.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="animations.js"></script>
+</body>
+</html>

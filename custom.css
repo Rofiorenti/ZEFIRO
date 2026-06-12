@@ -1,0 +1,826 @@
+/* =============================================
+   BASE
+   ============================================= */
+body {
+    overflow-x: hidden;
+}
+
+/* =============================================
+   NAVBAR — scroll opacity
+   ============================================= */
+.navbar {
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.97) !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.navbar img {
+    max-width: 30px;
+}
+
+/* =============================================
+   HERO / BG SECTIONS
+   ============================================= */
+.py-5.text-center.container,
+.position-relative.overflow-hidden.p-3.p-md-5.text-center.bg-body-tertiary,
+.py-5.container {
+    background-image: url(images/bg-001.png);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; /* subtle parallax */
+    padding: 15px;
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.py-5.text-center.container img {
+    max-width: 200px;
+    padding: 20px;
+}
+
+/* =============================================
+   CONTAINER / LAYOUT
+   ============================================= */
+.container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.text-center {
+    text-align: left !important;
+}
+
+header.row {
+    --bs-gutter-x: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+header.row > .col-md-12 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Allinea le due sezioni next step e immagini */
+.container > section.row:nth-of-type(1),
+.container > section.row:nth-of-type(2) {
+    align-items: stretch;
+}
+
+.container > section.row:nth-of-type(1) .col-md-6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container > section.row:first-of-type {
+    min-height: 200px;
+    align-items: center;
+}
+
+/* =============================================
+   CARD — hover lift
+   ============================================= */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+}
+
+/* =============================================
+   BUTTONS — subtle scale on hover
+   ============================================= */
+.btn {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* =============================================
+   FADE-UP ANIMATION (IntersectionObserver)
+   ============================================= */
+.fade-up {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* stagger delays for sibling cards */
+.fade-up:nth-child(2) { transition-delay: 0.10s; }
+.fade-up:nth-child(3) { transition-delay: 0.20s; }
+.fade-up:nth-child(4) { transition-delay: 0.30s; }
+
+/* =============================================
+   HERO TEXT — entrance animation
+   ============================================= */
+.hero-content {
+    animation: heroFadeIn 0.9s ease both;
+}
+
+@keyframes heroFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =============================================
+   NAV LINKS — underline slide
+   ============================================= */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0.5rem;
+    right: 0.5rem;
+    height: 2px;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transition: transform 0.25s ease;
+    transform-origin: left;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+/* =============================================
+   TEAM CARDS
+   ============================================= */
+.team-card {
+    border: none;
+    border-top: 3px solid var(--bs-primary);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.team-avatar {
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+    padding-bottom: 0.5rem;
+}
+
+.team-role {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--bs-primary);
+}
+
+/* =============================================
+   FOOTER CTA BAND
+   ============================================= */
+.footer .bg-primary {
+    transition: background-color 0.3s ease;
+}
+
+/* =============================================
+   TEAM SCROLL — track + sticky + trigger arch
+   ============================================= */
+
+/*
+   .team-track     — the tall scroll rail (300vh), relative
+   .team-sticky    — sticks inside the rail, full-width 2-col layout
+   .team-left      — crossfade text panels (stacked, position:relative)
+   .team-right     — crossfade photos (stacked, position:relative)
+   .team-triggers  — invisible 100vh divs, one per person, drive IO
+*/
+
+.team-track {
+    position: relative;
+    height: 300vh;        /* 100vh × 3 people */
+}
+
+.team-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    gap: 3.5rem;
+    pointer-events: none; /* triggers are above in DOM; re-enable on children */
+}
+
+/* ── Left col: text crossfade ── */
+.team-left {
+    flex: 1 1 50%;
+    min-width: 0;
+    position: relative;
+    pointer-events: auto;
+}
+
+.team-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+    pointer-events: none;
+}
+
+.team-text.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    position: relative; /* take space so col has height */
+}
+
+.team-role {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--bs-primary);
+    margin-bottom: 0.4rem;
+}
+
+.team-name {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 1.2rem;
+    line-height: 1.2;
+}
+
+.team-bio {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #444;
+}
+
+/* ── Right col: photo crossfade ── */
+.team-right {
+    flex: 0 0 42%;
+    max-width: 42%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: auto;
+}
+
+.team-photo-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #eee;
+}
+
+.team-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    opacity: 0;
+    transition: opacity 0.55s ease;
+}
+
+.team-photo.active {
+    opacity: 1;
+}
+
+/* ── Dot navigation ── */
+.team-dots {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 1rem;
+}
+
+.team-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    background: #ccc;
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.team-dot.active {
+    background: var(--bs-primary);
+    transform: scale(1.3);
+}
+
+/* ── Invisible triggers ── */
+.team-triggers {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.team-trigger {
+    height: 100vh;  /* one per person */
+}
+
+/* ── Mobile: unstack, disable sticky ── */
+@media (max-width: 767px) {
+    .team-track {
+        height: auto;
+    }
+
+    .team-sticky {
+        position: static;
+        height: auto;
+        flex-direction: column;
+        gap: 0;
+        padding: 1rem;
+    }
+
+    .team-right {
+        flex: none;
+        max-width: 100%;
+        width: 100%;
+        margin-bottom: 2rem;
+        order: -1; /* photo on top on mobile */
+    }
+
+    .team-photo-frame {
+        aspect-ratio: 16 / 9;
+    }
+
+    .team-left {
+        flex: none;
+        width: 100%;
+    }
+
+    /* show all texts stacked on mobile */
+    .team-text {
+        position: static;
+        opacity: 1;
+        transform: none;
+        padding: 2rem 0;
+        border-bottom: 1px solid rgba(0,0,0,0.08);
+        pointer-events: auto;
+    }
+
+    .team-text:last-child {
+        border-bottom: none;
+    }
+
+    .team-text.active {
+        position: static;
+    }
+
+    .team-triggers {
+        display: none;
+    }
+}
+
+/* =============================================
+   THE PROJECT PAGE
+   ============================================= */
+
+/* Override the global .container top/bottom padding on this page */
+.project-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* Status cards in hero band */
+.status-card {
+    border: none;
+    border-left: 3px solid var(--bs-primary);
+    border-radius: 0;
+    text-align: left;
+}
+
+.status-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--bs-primary);
+}
+
+/* Next step block */
+.next-step-label {
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 0;
+}
+
+.next-step-text {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    line-height: 1.65;
+    color: #444;
+    margin-bottom: 0;
+}
+
+/* Technical drawing cards */
+.drawing-card {
+    background: #0d0d0d;
+    border-radius: 6px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.drawing-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.drawing-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #888;
+    padding: 0.6rem 0.9rem;
+    margin: 0;
+}
+
+/* Mobile-specific overrides */
+@media (max-width: 575px) {
+    /* Hero band: less vertical space */
+    .position-relative.overflow-hidden.p-3.p-md-5 {
+        padding: 1.5rem 1rem !important;
+    }
+
+    /* Tighter card gaps */
+    .project-container {
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+    }
+
+    /* Full-width cards on xs */
+    .project-container .card,
+    .drawing-card {
+        margin-bottom: 0; /* gap utility handles spacing */
+    }
+
+    /* Next step label full width, smaller */
+    .next-step-label {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* =============================================
+   PROSPECT ROWS (index.htm)
+   ============================================= */
+
+.prospects {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.prospect-row {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    padding: 5rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+}
+
+.prospect-row:last-child {
+    border-bottom: none;
+}
+
+/* Reverse: photo on right, text on left */
+.prospect-row--reverse {
+    flex-direction: row-reverse;
+}
+
+.prospect-img {
+    flex: 0 0 55%;
+    max-width: 55%;
+}
+
+.prospect-img .drawing-card {
+    border-radius: 6px;
+    overflow: hidden;
+    background: #0d0d0d;
+}
+
+.prospect-img .drawing-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.prospect-text {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.prospect-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--bs-primary);
+    margin-bottom: 0.5rem;
+}
+
+.prospect-title {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.prospect-body {
+    font-size: 0.97rem;
+    line-height: 1.8;
+    color: #555;
+    max-width: 42ch;
+}
+
+/* ── Slide-in animations (triggered by JS) ── */
+.slide-from-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.slide-from-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.slide-from-left.visible,
+.slide-from-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* stagger: text slightly after image */
+.prospect-text.slide-from-left,
+.prospect-text.slide-from-right {
+    transition-delay: 0.15s;
+}
+
+/* ── Mobile ── */
+@media (max-width: 767px) {
+    .prospect-row,
+    .prospect-row--reverse {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 3rem 0;
+    }
+
+    .prospect-img {
+        flex: none;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .prospect-body {
+        max-width: none;
+    }
+
+    /* on mobile just fade in, no horizontal slide */
+    .slide-from-left,
+    .slide-from-right {
+        transform: translateY(20px);
+    }
+
+    .slide-from-left.visible,
+    .slide-from-right.visible {
+        transform: translateY(0);
+    }
+}
+
+/* =============================================
+   THE PROJECT — NEXT STEP BAND
+   ============================================= */
+
+.nextstep-band {
+    background: #111;
+    color: #fff;
+    padding: 5rem 0;
+}
+
+.nextstep-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.nextstep-left {
+    flex: 0 0 28%;
+}
+
+.nextstep-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--bs-primary);
+    margin-bottom: 0.5rem;
+}
+
+.nextstep-heading {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.nextstep-right {
+    flex: 1 1 auto;
+    border-left: 2px solid rgba(255,255,255,0.12);
+    padding-left: 3rem;
+}
+
+.nextstep-body {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.75;
+    color: rgba(255,255,255,0.75);
+    margin: 0;
+}
+
+@media (max-width: 767px) {
+    .nextstep-inner {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 0 1.25rem;
+    }
+
+    .nextstep-left {
+        flex: none;
+        width: 100%;
+    }
+
+    .nextstep-right {
+        border-left: none;
+        border-top: 2px solid rgba(255,255,255,0.12);
+        padding-left: 0;
+        padding-top: 1.5rem;
+    }
+
+    .nextstep-band {
+        padding: 3rem 0;
+    }
+}
+
+
+/* =============================================
+   THE PROJECT — USE CASES BAND (photo bg)
+   ============================================= */
+
+.usecases-band {
+    position: relative;
+    min-height: 580px;
+    display: flex;
+    align-items: center;
+}
+
+.usecases-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* parallax */
+    /* fallback colour when image isn't loaded yet */
+    background-color: #0a1628;
+}
+
+.usecases-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(0,0,0,0.82) 0%,
+        rgba(0,0,0,0.60) 100%
+    );
+}
+
+.usecases-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+    color: #fff;
+}
+
+.usecases-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--bs-primary);
+    margin-bottom: 0.4rem;
+}
+
+.usecases-heading {
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 300;
+    margin-bottom: 0;
+}
+
+/* individual use case card */
+.usecase-card {
+    background: rgba(255,255,255,0.07);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+    padding: 2rem 1.5rem;
+    height: 100%;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.usecase-card:hover {
+    background: rgba(255,255,255,0.13);
+    transform: translateY(-4px);
+}
+
+.usecase-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+    line-height: 1;
+}
+
+.usecase-card h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    color: #fff;
+}
+
+.usecase-card p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.70);
+    margin: 0;
+}
+
+/* slide-from-bottom animation (for centre card) */
+.slide-from-bottom {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+    transition-delay: 0.1s;
+}
+
+.slide-from-bottom.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.usecase-card.slide-from-left  { transition-delay: 0s;    }
+.usecase-card.slide-from-bottom{ transition-delay: 0.13s; }
+.usecase-card.slide-from-right { transition-delay: 0.26s; }
+
+@media (max-width: 767px) {
+    .usecases-band {
+        min-height: auto;
+    }
+
+    .usecases-bg {
+        background-attachment: scroll; /* fixed doesn't work well on mobile */
+    }
+
+    .usecases-content {
+        padding: 3rem 1.25rem;
+    }
+
+    .usecase-card {
+        padding: 1.5rem 1.25rem;
+    }
+}

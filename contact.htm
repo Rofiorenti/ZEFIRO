@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ZEFIRO — Contact Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="custom.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.htm"><img src="images/logo.png"> ZEFIRO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.htm">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aboutus.htm">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="theproject.htm">The Project</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.htm">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="py-5 text-center container">
+        <div class="row">
+            <div class="col-lg-6 hero-content">
+                <h1 class="fw-light">
+                    <img src="images/logo-w.png" width="100px" style="vertical-align: middle;"> Contact Us
+                </h1>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="container">
+
+        <section class="row">
+            <div class="col-lg-7">
+                <h5 class="mb-3">Fill out the contact form to get in touch with us</h5>
+                <form action="contact.htm" method="get">
+
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="First name">
+                        </div>
+                        <div class="col">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="Last name">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="emailInput" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="emailInput" placeholder="mail@zefiro.com">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="phoneInput" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="phoneInput" placeholder="+39 333 1234 567">
+                    </div>
+
+                    <div class="form-floating mb-5">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                            style="height: 150px"></textarea>
+                        <label for="floatingTextarea2">Your Message</label>
+                    </div>
+
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Send</button>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+
+    </div> <!-- END CONTAINER -->
+
+
+    <!-- FOOTER -->
+    <footer class="footer mt-5">
+
+        <div class="bg-primary text-white text-center py-5">
+            <div class="container">
+                <h2 class="fw-light mb-2">Become a Partner</h2>
+                <p class="lead mb-4">We are looking for the right partner to bring Zefiro to the water.</p>
+                <a href="contact.htm" class="btn btn-light btn-lg px-4">Contact Us</a>
+            </div>
+        </div>
+
+        <div class="bg-dark text-white py-4">
+            <div class="container">
+                <div class="row align-items-center gy-3">
+                    <div class="col-md-4 text-center text-md-start">
+                        <img src="images/logo-w.png" alt="Zefiro" style="height:32px;">
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <ul class="list-inline mb-0 small">
+                            <li class="list-inline-item"><a href="index.htm" class="text-white-50 text-decoration-none">Home</a></li>
+                            <li class="list-inline-item text-white-50">·</li>
+                            <li class="list-inline-item"><a href="aboutus.htm" class="text-white-50 text-decoration-none">About Us</a></li>
+                            <li class="list-inline-item text-white-50">·</li>
+                            <li class="list-inline-item"><a href="theproject.htm" class="text-white-50 text-decoration-none">The Project</a></li>
+                            <li class="list-inline-item text-white-50">·</li>
+                            <li class="list-inline-item"><a href="contact.htm" class="text-white-50 text-decoration-none">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 text-center text-md-end">
+                        <small class="text-white-50">&copy; 2025 Zefiro. All rights reserved.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="animations.js"></script>
+</body>
+
+</html>
