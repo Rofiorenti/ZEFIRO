@@ -30,11 +30,20 @@ body {
     background-image: url(images/bg-001.png);
     background-position: center;
     background-size: cover;
-    background-attachment: fixed; /* subtle parallax */
+    background-attachment: fixed; /* parallax on desktop */
     padding: 15px;
     max-width: 100%;
     padding-left: 0;
     padding-right: 0;
+}
+
+/* fixed attachment breaks on mobile Safari — disable */
+@media (max-width: 767px) {
+    .py-5.text-center.container,
+    .position-relative.overflow-hidden.p-3.p-md-5.text-center.bg-body-tertiary,
+    .py-5.container {
+        background-attachment: scroll;
+    }
 }
 
 .py-5.text-center.container img {
