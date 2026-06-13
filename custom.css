@@ -291,7 +291,7 @@ header.row > .col-md-12 {
 .team-photo-frame {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 4 / 5;
     border-radius: 6px;
     overflow: hidden;
     background: #eee;
@@ -303,7 +303,7 @@ header.row > .col-md-12 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center center;
+    object-position: center top;
     opacity: 0;
     transition: opacity 0.55s ease;
 }
@@ -847,4 +847,98 @@ header.row > .col-md-12 {
     line-height: 1.75;
     color: rgba(255,255,255,0.78);
     margin: 0;
+}
+
+/* =============================================
+   HOME — STATS STRIP
+   ============================================= */
+
+.stats-strip {
+    background: #fff;
+    border-top: 1px solid rgba(0,0,0,0.07);
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+    padding: 0;
+    overflow-x: auto;           /* scroll on mobile */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;      /* hide scrollbar Firefox */
+}
+
+.stats-strip::-webkit-scrollbar {
+    display: none;              /* hide scrollbar Chrome/Safari */
+}
+
+.stats-inner {
+    display: flex;
+    align-items: stretch;
+    min-width: max-content;     /* prevent wrapping on mobile */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stat-card {
+    flex: 1 1 0;
+    min-width: 240px;           /* each card min width on mobile */
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.stat-divider {
+    width: 1px;
+    background: rgba(0,0,0,0.08);
+    align-self: stretch;
+    flex-shrink: 0;
+}
+
+.stat-number {
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--bs-primary);
+    margin-bottom: 0.3rem;
+}
+
+.stat-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #111;
+}
+
+.stat-sub {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 0.5rem;
+}
+
+.stat-body {
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: #666;
+    margin: 0;
+}
+
+/* scroll hint on mobile — subtle fade on right edge */
+@media (max-width: 767px) {
+    .stats-strip {
+        position: relative;
+    }
+
+    .stats-strip::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 48px;
+        height: 100%;
+        background: linear-gradient(to right, transparent, rgba(255,255,255,0.9));
+        pointer-events: none;
+    }
+
+    .stat-card {
+        padding: 2rem 1.5rem;
+    }
 }
