@@ -96,7 +96,41 @@ document.addEventListener('DOMContentLoaded', () => {
             const track = document.querySelector('.team-track');
             const trackTop = track.getBoundingClientRect().top + window.scrollY;
             window.scrollTo({ top: trackTop + idx * window.innerHeight + window.innerHeight * 0.5, behavior: 'smooth' });
+
+});
+
+});
+
+
+    // ── 5. Mobile team slideshow ──────────────────────────
+    const slideshow = document.getElementById('team-slideshow');
+    if (slideshow) {
+        const dots = slideshow.querySelectorAll('.slide-dot');
+        const slides = slideshow.querySelectorAll('.team-slide');
+
+        // Update dots on scroll (snap fires scroll events)
+        slideshow.addEventListener('scroll', () => {
+            const idx = Math.round(slideshow.scrollLeft / slideshow.clientWidth);
+            dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+        }, { passive: true });
+
+        // Dot tap → scroll to slide
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const idx = parseInt(dot.dataset.idx);
+                slideshow.scrollTo({ left: idx * slideshow.clientWidth, behavior: 'smooth' });
+            });
         });
-    });
+
+        // Swipe hint — hide after first swipe
+        const swipeHint = document.getElementById('swipe-hint');
+        if (swipeHint) {
+            slideshow.addEventListener('scroll', () => {
+                if (slideshow.scrollLeft > 20) {
+                    swipeHint.classList.add('hidden');
+                }
+            }, { passive: true, once: false });
+        }
+    }
 
 });

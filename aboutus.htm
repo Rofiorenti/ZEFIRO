@@ -38,12 +38,22 @@
                 <img src="images/logo-w.png">
                 <h1 class="fw-light">THE TEAM</h1>
                 <p class="lead text-body-secondary">A balance of multidisciplinary talents.</p>
-                <p class="lead text-body-paragraph">Zefiro brings together an architect, a naval engineer and a
+                <!-- hidden on mobile -->
+                <p class="lead text-body-paragraph d-none d-md-block">Zefiro brings together an architect, a naval engineer and a
                     management engineer — three disciplines that converge into a single, coherent vision for
                     the future of water transport.</p>
             </div>
         </div>
     </section>
+
+    <!-- DESCRIPTION BAND — mobile only -->
+    <div class="descband d-md-none">
+        <div class="descband-inner">
+            <p class="descband-body">Zefiro brings together an architect, a naval engineer and a
+                management engineer — three disciplines that converge into a single, coherent vision for
+                the future of water transport.</p>
+        </div>
+    </div>
 
 
     <!--
@@ -55,7 +65,7 @@
             .team-right  — right col: stacked photos (crossfade)
           .team-triggers — invisible divs 100vh each that fire IO events
     -->
-    <div class="team-track">
+    <div class="team-track d-none d-md-block">
 
         <!-- sticky frame: stays in viewport while track scrolls -->
         <div class="team-sticky">
@@ -133,6 +143,83 @@
 
     </div><!-- end .team-track -->
 
+
+
+    <!-- MOBILE TEAM SLIDESHOW (hidden on md+) -->
+    <div class="team-slideshow d-md-none" id="team-slideshow">
+
+        <div class="team-slide" data-member="mario">
+            <div class="slide-photo">
+                <img src="images/team-mario.png" alt="Mario Bonelli">
+            </div>
+            <div class="slide-text">
+                <p class="team-role">Architect &amp; Industrial Designer</p>
+                <h2 class="team-name">Mario Bonelli</h2>
+                <p class="team-bio">Novara, 1967. An architect who graduated from the
+                    <strong>Politecnico di Milano</strong> with a thesis project for a public transport
+                    vessel designed for lagoon waters. He also trained as an industrial designer at the
+                    Scuola Politecnica di Design in Milan, and has worked abroad on major construction
+                    projects. He has run his own architecture and design practice in Milan since 1992.
+                    A sailor, regatta competitor and navigator — from the Mediterranean to the Atlantic
+                    and the Arctic. Since 2005, he has focused primarily on product design in the
+                    industrial and nautical sectors.</p>
+            </div>
+        </div>
+
+        <div class="team-slide" data-member="paolo">
+            <div class="slide-photo">
+                <img src="images/team-paolo.png" alt="Paolo Portinari">
+            </div>
+            <div class="slide-text">
+                <p class="team-role">Naval Engineer</p>
+                <h2 class="team-name">Paolo Portinari</h2>
+                <p class="team-bio">Milan, 1973. Specializing in <strong>yacht design</strong>,
+                    computational fluid dynamics and the engineering of composite products, he has been
+                    working for over thirty years in the field of design and the development of complex
+                    objects, from initial design through to final production. He has designed and
+                    collaborated on numerous sailing and motor boats, winning prestigious awards for
+                    design and engineering.</p>
+            </div>
+        </div>
+
+        <div class="team-slide" data-member="francesco">
+            <div class="slide-photo">
+                <img src="images/team-francesco.png" alt="Francesco Fiorentini">
+            </div>
+            <div class="slide-text">
+                <p class="team-role">Management Engineer</p>
+                <h2 class="team-name">Francesco Fiorentini</h2>
+                <p class="team-bio">Born in 1964, an <strong>engineer</strong> from the
+                    <strong>Politecnico di Milano</strong>. Francesco began his career at the CNR when
+                    artificial intelligence was still the stuff of science fiction. After gaining
+                    experience in Germany and Austria, he joined the Cannon Group in 1995, building
+                    industrial machinery. Always curious and a bit of a nerd, he sees innovation as a
+                    never-ending adventure.</p>
+            </div>
+        </div>
+
+        <!-- dot indicators -->
+        <div class="slide-dots">
+            <span class="slide-dot active" data-idx="0"></span>
+            <span class="slide-dot" data-idx="1"></span>
+            <span class="slide-dot" data-idx="2"></span>
+        </div>
+
+        <!-- swipe hint — fades out after first scroll -->
+        <div class="swipe-hint" id="swipe-hint" aria-hidden="true">
+            <div class="swipe-hand">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+                    <!-- hand/finger icon -->
+                    <circle cx="20" cy="20" r="19" fill="rgba(0,0,0,0.45)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+                    <!-- left arrow -->
+                    <polyline points="17,14 11,20 17,26" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <!-- right arrow -->
+                    <polyline points="23,14 29,20 23,26" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <span class="swipe-label">swipe</span>
+        </div>
+    </div>
 
     <!-- PARTNER CTA -->
     <div class="container">
