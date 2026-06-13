@@ -48,42 +48,57 @@
         <section class="row">
             <div class="col-lg-7">
                 <h5 class="mb-3">Fill out the contact form to get in touch with us</h5>
-                <form action="https://formspree.io/f/xjgdpezj" method="POST">
+                <form id="contact-form">
 
                     <div class="row mb-3">
                         <div class="col">
                             <label for="firstName" class="form-label">First Name</label>
-                            <input type="text" class="form-control" id="firstName" placeholder="First name">
+                            <input type="text" class="form-control" id="firstName" name="first_name" placeholder="First name" required>
                         </div>
                         <div class="col">
                             <label for="lastName" class="form-label">Last Name</label>
-                            <input type="text" class="form-control" id="lastName" placeholder="Last name">
+                            <input type="text" class="form-control" id="lastName" name="last_name" placeholder="Last name" required>
                         </div>
                     </div>
 
                     <div class="mb-3">
                         <label for="emailInput" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="emailInput" placeholder="mail@zefiro.com">
+                        <input type="email" class="form-control" id="emailInput" name="email" placeholder="mail@example.com" required>
                     </div>
 
                     <div class="mb-3">
                         <label for="phoneInput" class="form-label">Phone Number</label>
-                        <input type="tel" class="form-control" id="phoneInput" placeholder="+39 333 1234 567">
+                        <input type="tel" class="form-control" id="phoneInput" name="phone" placeholder="+39 333 1234 567">
                     </div>
 
                     <div class="form-floating mb-5">
                         <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
-                            style="height: 150px"></textarea>
+                            name="message" style="height: 150px" required></textarea>
                         <label for="floatingTextarea2">Your Message</label>
                     </div>
 
                     <div class="col-12">
-                        <button type="submit" class="btn btn-primary">Send</button>
+                        <button type="submit" class="btn btn-primary" id="submit-btn">Send</button>
                     </div>
 
                 </form>
             </div>
         </section>
+
+        <!-- SUCCESS MODAL -->
+        <div class="contact-modal-bg" id="contact-modal" aria-hidden="true">
+            <div class="contact-modal-box">
+                <div class="contact-modal-icon">✓</div>
+                <h4>Message sent!</h4>
+                <p>Thank you for reaching out. We'll get back to you as soon as possible.</p>
+                <button class="btn btn-primary mt-2" id="modal-close">Close</button>
+            </div>
+        </div>
+
+        <!-- ERROR TOAST -->
+        <div class="contact-toast" id="contact-toast">
+            Something went wrong — please try again.
+        </div>
 
     </div> <!-- END CONTAINER -->
 
@@ -129,6 +144,65 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
     <script src="animations.js"></script>
+    <script>
+    (function () {
+        const form      = document.getElementById('contact-form');
+        const modal     = document.getElementById('contact-modal');
+        const modalClose= document.getElementById('modal-close');
+        const toast     = document.getElementById('contact-toast');
+        const submitBtn = document.getElementById('submit-btn');
+
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            // Loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending…';
+
+            const data = new FormData(form);
+
+            try {
+                const res = await fetch('https://formspree.io/f/xjgdpezj', {
+                    method: 'POST',
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (res.ok) {
+                    form.reset();
+                    showModal();
+                } else {
+                    showToast();
+                }
+            } catch (err) {
+                showToast();
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send';
+            }
+        });
+
+        function showModal() {
+            modal.classList.add('active');
+            modal.setAttribute('aria-hidden', 'false');
+        }
+
+        function hideModal() {
+            modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
+        }
+
+        function showToast() {
+            toast.classList.add('active');
+            setTimeout(() => toast.classList.remove('active'), 4000);
+        }
+
+        modalClose.addEventListener('click', hideModal);
+        modal.addEventListener('click', function (e) {
+            if (e.target === modal) hideModal();
+        });
+    })();
+    </script>
 </body>
 
 </html>

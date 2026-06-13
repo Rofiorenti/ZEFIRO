@@ -1142,3 +1142,92 @@ header.row > .col-md-12 {
     background: #fff;
     transform: scale(1.3);
 }
+
+/* =============================================
+   CONTACT — SUCCESS MODAL + ERROR TOAST
+   ============================================= */
+
+/* Modal backdrop */
+.contact-modal-bg {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    animation: modalFadeIn 0.25s ease;
+}
+
+.contact-modal-bg.active {
+    display: flex;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Modal box */
+.contact-modal-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    max-width: 380px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+    animation: modalSlideUp 0.3s ease;
+}
+
+@keyframes modalSlideUp {
+    from { transform: translateY(24px); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+}
+
+.contact-modal-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--bs-primary);
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 56px;
+    margin: 0 auto 1.2rem;
+}
+
+.contact-modal-box h4 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.contact-modal-box p {
+    color: #666;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Error toast */
+.contact-toast {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: #c0392b;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    z-index: 1100;
+    opacity: 0;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+    white-space: nowrap;
+}
+
+.contact-toast.active {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
