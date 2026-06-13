@@ -897,7 +897,7 @@ header.row > .col-md-12 {
 
 @media (max-width: 767px) {
     .stat-card {
-        min-width: 72vw;   /* ~3 cards visible at once with peek */
+        min-width: 58vw;
         padding: 1.75rem 1.25rem;
     }
 }
