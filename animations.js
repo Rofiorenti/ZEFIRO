@@ -155,4 +155,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+
+    // ── 7. Stats strip swipe hint ─────────────────────────
+    const statsStrip     = document.getElementById('stats-strip');
+    const statsSwipeHint = document.getElementById('stats-swipe-hint');
+    if (statsStrip && statsSwipeHint) {
+        // scroll event on the strip itself
+        statsStrip.addEventListener('scroll', hideStatsHint, { passive: true });
+        // also catch touch move as fallback for Safari
+        statsStrip.addEventListener('touchmove', hideStatsHint, { passive: true });
+    }
+
+    function hideStatsHint() {
+        if (statsStrip.scrollLeft > 20) {
+            statsSwipeHint.classList.add('hidden');
+            statsStrip.removeEventListener('scroll', hideStatsHint);
+            statsStrip.removeEventListener('touchmove', hideStatsHint);
+        }
+    }
+
 });

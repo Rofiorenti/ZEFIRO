@@ -1240,3 +1240,29 @@ header.row > .col-md-12 {
     transform: translateX(-50%) translateY(0);
     opacity: 1;
 }
+
+/* =============================================
+   STATS STRIP — SWIPE HINT (mobile only)
+   ============================================= */
+.stats-swipe-hint {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.stats-swipe-hint.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+@media (max-width: 767px) {
+    .stats-swipe-hint {
+        display: flex;
+    }
+}
