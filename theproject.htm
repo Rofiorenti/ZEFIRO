@@ -38,8 +38,9 @@
             <h1 class="display-5 fw-light mb-1">Project Status</h1>
             <h3 class="fw-normal text-muted mb-4 fs-5">From design to production</h3>
 
-            <div class="row g-3">
-                <div class="col-12 col-sm-6 col-lg-3">
+            <!-- desktop: bootstrap grid (sm+) -->
+            <div class="row g-3 d-none d-sm-flex">
+                <div class="col-sm-6 col-lg-3">
                     <div class="card h-100 status-card">
                         <div class="card-body">
                             <span class="status-badge">✓ Completed</span>
@@ -48,7 +49,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3">
+                <div class="col-sm-6 col-lg-3">
                     <div class="card h-100 status-card">
                         <div class="card-body">
                             <span class="status-badge">✓ Completed</span>
@@ -57,7 +58,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3">
+                <div class="col-sm-6 col-lg-3">
                     <div class="card h-100 status-card">
                         <div class="card-body">
                             <span class="status-badge">✓ Completed</span>
@@ -66,7 +67,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3">
+                <div class="col-sm-6 col-lg-3">
                     <div class="card h-100 status-card">
                         <div class="card-body">
                             <span class="status-badge">✓ Completed</span>
@@ -74,6 +75,55 @@
                                 deck layouts in both cabin and open versions.</p>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- mobile: horizontal scroll carousel (xs only) -->
+            <div class="status-carousel d-sm-none" id="status-carousel">
+                <div class="status-carousel-track">
+                    <div class="status-carousel-item">
+                        <div class="card h-100 status-card">
+                            <div class="card-body">
+                                <span class="status-badge">✓ Completed</span>
+                                <p class="card-text mt-2">Waterlines, hydrodynamics and targeted simulations.
+                                    Geometry dedicated to foiling.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="status-carousel-item">
+                        <div class="card h-100 status-card">
+                            <div class="card-body">
+                                <span class="status-badge">✓ Completed</span>
+                                <p class="card-text mt-2">Foil movement system designed and validated. Patent
+                                    filed (UIBM n° 102025000015892).</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="status-carousel-item">
+                        <div class="card h-100 status-card">
+                            <div class="card-body">
+                                <span class="status-badge">✓ Completed</span>
+                                <p class="card-text mt-2">Propulsion system, batteries, flight control. Weight
+                                    distribution and technical specs finalized.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="status-carousel-item">
+                        <div class="card h-100 status-card">
+                            <div class="card-body">
+                                <span class="status-badge">✓ Completed</span>
+                                <p class="card-text mt-2">Mold engineering, ergonomics, materials, styling and
+                                    deck layouts in both cabin and open versions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- dots -->
+                <div class="status-dots">
+                    <span class="status-dot active" data-idx="0"></span>
+                    <span class="status-dot" data-idx="1"></span>
+                    <span class="status-dot" data-idx="2"></span>
+                    <span class="status-dot" data-idx="3"></span>
                 </div>
             </div>
         </div>

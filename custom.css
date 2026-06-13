@@ -1092,3 +1092,53 @@ header.row > .col-md-12 {
     60%       { transform: translateX(6px);  opacity: 0.7;  }
     80%       { transform: translateX(0);    opacity: 1;    }
 }
+
+/* =============================================
+   THE PROJECT — STATUS CAROUSEL (mobile)
+   ============================================= */
+
+.status-carousel {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 2rem; /* space for dots */
+}
+
+.status-carousel-track {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 0.75rem;
+    padding: 0.25rem 0.25rem 0.5rem;
+}
+
+.status-carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+.status-carousel-item {
+    flex: 0 0 78vw;        /* show a sliver of next card */
+    scroll-snap-align: start;
+}
+
+.status-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.45rem;
+    margin-top: 0.75rem;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.35);
+    transition: background 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.status-dot.active {
+    background: #fff;
+    transform: scale(1.3);
+}

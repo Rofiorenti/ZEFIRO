@@ -133,4 +133,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+
+    // ── 6. Project status carousel (mobile) ──────────────
+    const statusCarousel = document.getElementById('status-carousel');
+    if (statusCarousel) {
+        const track = statusCarousel.querySelector('.status-carousel-track');
+        const dots  = statusCarousel.querySelectorAll('.status-dot');
+
+        track.addEventListener('scroll', () => {
+            const idx = Math.round(track.scrollLeft / track.clientWidth * (1 / 0.78));
+            const clamped = Math.min(idx, dots.length - 1);
+            dots.forEach((d, i) => d.classList.toggle('active', i === clamped));
+        }, { passive: true });
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const idx = parseInt(dot.dataset.idx);
+                const itemW = track.querySelector('.status-carousel-item').offsetWidth + 12; // gap
+                track.scrollTo({ left: idx * itemW, behavior: 'smooth' });
+            });
+        });
+    }
+
 });
