@@ -156,35 +156,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // ── 7. Stats strip swipe hint ─────────────────────────
-    const statsStrip     = document.getElementById('stats-strip');
-    const statsSwipeHint = document.getElementById('stats-swipe-hint');
-    if (statsStrip && statsSwipeHint) {
-        let touchStartX = 0;
 
-        // touchstart: record finger position
-        statsStrip.addEventListener('touchstart', (e) => {
-            touchStartX = e.touches[0].clientX;
-        }, { passive: true });
-
-        // touchend: if finger moved left by >15px → hide hint
-        statsStrip.addEventListener('touchend', (e) => {
-            const dx = touchStartX - e.changedTouches[0].clientX;
-            if (dx > 15) {
-                statsSwipeHint.classList.add('hidden');
-            }
-        }, { passive: true });
-
-        // also try scroll for non-touch devices
-        const scrollingEl = statsStrip.querySelector('.stats-inner');
-        if (scrollingEl) {
-            scrollingEl.addEventListener('scroll', () => {
-                if (scrollingEl.scrollLeft > 20) statsSwipeHint.classList.add('hidden');
-            }, { passive: true });
-        }
-        statsStrip.addEventListener('scroll', () => {
-            if (statsStrip.scrollLeft > 20) statsSwipeHint.classList.add('hidden');
-        }, { passive: true });
-    }
 
 });
