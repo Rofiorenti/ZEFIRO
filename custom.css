@@ -1049,9 +1049,13 @@ header.row > .col-md-12 {
    MOBILE SLIDESHOW — SWIPE HINT
    ============================================= */
 
+.slide-photo {
+    position: relative;
+}
+
 .swipe-hint {
     position: absolute;
-    bottom: 2.8rem;          /* above dots */
+    bottom: 1rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;

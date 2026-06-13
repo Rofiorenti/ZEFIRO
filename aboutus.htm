@@ -151,6 +151,17 @@
         <div class="team-slide" data-member="mario">
             <div class="slide-photo">
                 <img src="images/team-mario.png" alt="Mario Bonelli">
+                <!-- swipe hint overlaid on photo — fades out after first scroll -->
+                <div class="swipe-hint" id="swipe-hint" aria-hidden="true">
+                    <div class="swipe-hand">
+                        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+                            <circle cx="20" cy="20" r="19" fill="rgba(0,0,0,0.45)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+                            <polyline points="17,14 11,20 17,26" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <polyline points="23,14 29,20 23,26" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <span class="swipe-label">swipe</span>
+                </div>
             </div>
             <div class="slide-text">
                 <p class="team-role">Architect &amp; Industrial Designer</p>
@@ -203,21 +214,6 @@
             <span class="slide-dot active" data-idx="0"></span>
             <span class="slide-dot" data-idx="1"></span>
             <span class="slide-dot" data-idx="2"></span>
-        </div>
-
-        <!-- swipe hint — fades out after first scroll -->
-        <div class="swipe-hint" id="swipe-hint" aria-hidden="true">
-            <div class="swipe-hand">
-                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="32" height="32">
-                    <!-- hand/finger icon -->
-                    <circle cx="20" cy="20" r="19" fill="rgba(0,0,0,0.45)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-                    <!-- left arrow -->
-                    <polyline points="17,14 11,20 17,26" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <!-- right arrow -->
-                    <polyline points="23,14 29,20 23,26" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <span class="swipe-label">swipe</span>
         </div>
     </div>
 
