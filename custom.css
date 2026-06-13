@@ -50,8 +50,10 @@ body {
     padding-bottom: 50px;
 }
 
-.text-center {
-    text-align: left !important;
+@media (min-width: 768px) {
+    .text-center {
+        text-align: left !important;
+    }
 }
 
 header.row {
