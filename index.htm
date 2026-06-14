@@ -1,172 +1,130 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ZEFIRO</title>
+    <title>ZEFIRO — Electric Foiling Vessel</title>
     <link rel="icon" type="image/png" href="images/logo.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="custom.css">
 </head>
-
 <body>
 
-    <!-- header -->
-    <header>
-        <div class="container-fluid px-0">
-
-            <!-- NAVBAR -->
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="index.htm"><img src="images/logo.png"> ZEFIRO</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link active" href="index.htm">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="aboutus.htm">About Us</a></li>
-                            <li class="nav-item"><a class="nav-link" href="theproject.htm">The Project</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.htm">Contact Us</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-
-            <!-- HERO -->
-            <section class="py-5 text-center container">
-                <div class="row py-lg-5">
-                    <div class="col-lg-6 col-md-8 mx-auto hero-content">
-                        <img src="images/logo-w.png">
-                        <h1 class="fw-light">FLY WITH ZEFIRO</h1>
-                        <p class="lead text-body-secondary">Your journey TAKES OFF above the water.</p>
-                        <!-- paragraph hidden on mobile, shown md+ -->
-                        <p class="lead text-body-paragraph d-none d-md-block">Passenger water transport has remained unchanged for
-                            decades: noisy, polluting and expensive. Zefiro is the answer: an electric foiling vessel
-                            that lifts above the water surface, dramatically reducing drag, energy consumption and noise
-                            emissions. Designed for lagoons, inland waterways, tourist destinations and areas where
-                            combustion engines are prohibited.</p>
-                        <p>
-                            <a href="contact.htm" class="btn btn-primary my-2">Contact Us</a>
-                            <a href="theproject.htm" class="btn btn-secondary my-2">Find out more</a>
-                        </p>
-                    </div>
-                </div>
-            </section>
-
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid px-3 px-md-4">
+            <a class="navbar-brand" href="index.htm">
+                <img src="images/logo-w.png" alt="Zefiro">
+                ZEFIRO
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.htm">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aboutus.htm">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="theproject.htm">The Project</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.htm">Contact</a></li>
+                </ul>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- DESCRIPTION BAND — mobile only (d-md-none) -->
-    <div class="descband d-md-none">
-        <div class="descband-inner">
-            <p class="descband-body">Passenger water transport has remained unchanged for
-                decades: noisy, polluting and expensive. Zefiro is the answer: an electric foiling vessel
-                that lifts above the water surface, dramatically reducing drag, energy consumption and noise
-                emissions. Designed for lagoons, inland waterways, tourist destinations and areas where
-                combustion engines are prohibited.</p>
+    <section class="z-hero">
+        <div class="z-hero-bg"></div>
+        <div class="z-hero-overlay"></div>
+        <div class="z-hero-content">
+            <p class="z-hero-eyebrow">Electric Foiling Vessel</p>
+            <h1 class="z-hero-title">
+                Above<br>
+                the <strong>water.</strong>
+            </h1>
+            <p class="z-hero-body">
+                Passenger water transport has remained unchanged for decades — noisy, polluting and expensive.
+                Zefiro is the answer: an electric foiling vessel that lifts above the surface, reducing drag
+                by over 80%, eliminating emissions and noise. Built for lagoons, waterways, and protected zones.
+            </p>
+            <div class="z-hero-actions">
+                <a href="contact.htm" class="btn-z-primary">Become a partner →</a>
+                <a href="theproject.htm" class="btn-z-ghost">The project</a>
+            </div>
         </div>
-    </div>
+    </section>
 
-
-    <!-- STATS STRIP -->
-    <div class="stats-strip" id="stats-strip">
-        <div class="stats-inner">
-
-            <div class="stat-card">
-                <div class="stat-number">0</div>
-                <div class="stat-title">Emissions</div>
-                <div class="stat-sub">100% Electric</div>
-                <p class="stat-body">Silent, zero emission. 55NM&nbsp;range at cruising speed.</p>
+    <div class="z-stats">
+        <div class="z-stats-inner">
+            <div class="z-stat">
+                <div class="z-stat-number">0</div>
+                <div class="z-stat-label">Emissions</div>
+                <div class="z-stat-sub">100% Electric</div>
+                <p class="z-stat-body">Silent, zero emission. 55 NM range at cruising speed.</p>
             </div>
-
-            <div class="stat-divider"></div>
-
-            <div class="stat-card">
-                <div class="stat-number">20kn</div>
-                <div class="stat-title">Cruising Speed</div>
-                <div class="stat-sub">Patented foil system</div>
-                <p class="stat-body">Fully retractable wings, invisible at rest, operational in flight.</p>
+            <div class="z-stat">
+                <div class="z-stat-number">20kn</div>
+                <div class="z-stat-label">Cruising Speed</div>
+                <div class="z-stat-sub">Patented foil system</div>
+                <p class="z-stat-body">Fully retractable wings — invisible at rest, operational in flight.</p>
             </div>
-
-            <div class="stat-divider"></div>
-
-            <div class="stat-card">
-                <div class="stat-number">8+1</div>
-                <div class="stat-title">Passengers</div>
-                <div class="stat-sub">Compact &amp; Compliant</div>
-                <p class="stat-body">Compliant with protected marine areas and zero-emission zones.</p>
+            <div class="z-stat">
+                <div class="z-stat-number">8+1</div>
+                <div class="z-stat-label">Passengers</div>
+                <div class="z-stat-sub">Compact &amp; Compliant</div>
+                <p class="z-stat-body">Compliant with protected marine areas and zero-emission zones.</p>
             </div>
-
         </div>
     </div>
 
+    <section class="z-prospects">
 
-    <!-- PROSPECT ROWS -->
-    <section class="prospects">
-
-        <!-- Row 1: photo LEFT, text RIGHT -->
-        <div class="prospect-row">
-            <div class="prospect-img slide-from-left">
-                <div class="drawing-card">
-                    <img src="images/above-out.png" alt="Hull — top view">
-                </div>
+        <div class="z-prospect-row">
+            <div class="z-prospect-img slide-from-left">
+                <img src="images/above-out.png" alt="Hull — top view">
             </div>
-            <div class="prospect-text slide-from-right">
-                <p class="prospect-label">Top view — Hull</p>
-                <h2 class="prospect-title">Designed for flight</h2>
-                <p class="prospect-body">The hull geometry is purpose-built for foiling: a narrow waterplane,
+            <div class="z-prospect-text slide-from-right">
+                <p class="z-prospect-label">Top view — Hull</p>
+                <h2 class="z-prospect-title">Designed for flight</h2>
+                <p class="z-prospect-body">The hull geometry is purpose-built for foiling: a narrow waterplane,
                     optimised centre of gravity, and fully retractable wings that integrate flush into the
                     hull at rest. At speed, Zefiro rises completely above the surface — drag drops by over 80%.</p>
             </div>
         </div>
 
-        <!-- Row 2: photo RIGHT, text LEFT -->
-        <div class="prospect-row prospect-row--reverse">
-            <div class="prospect-img slide-from-right">
-                <div class="drawing-card">
-                    <img src="images/above-in.png" alt="Interior — top view">
-                </div>
+        <div class="z-prospect-row z-prospect-row--reverse">
+            <div class="z-prospect-img slide-from-right">
+                <img src="images/above-in.png" alt="Interior — top view">
             </div>
-            <div class="prospect-text slide-from-left">
-                <p class="prospect-label">Top view — Interior</p>
-                <h2 class="prospect-title">8 passengers. Two layouts.</h2>
-                <p class="prospect-body">Available in cabin and open-deck versions, the interior seats eight
+            <div class="z-prospect-text slide-from-left">
+                <p class="z-prospect-label">Top view — Interior</p>
+                <h2 class="z-prospect-title">8 passengers. Two layouts.</h2>
+                <p class="z-prospect-body">Available in cabin and open-deck versions, the interior seats eight
                     passengers plus driver with generous legroom and unobstructed sightlines. Ergonomics and
                     materials were validated in parallel with the structural design — no compromises.</p>
             </div>
         </div>
 
-        <!-- Row 3: photo LEFT, text RIGHT -->
-        <div class="prospect-row">
-            <div class="prospect-img slide-from-left">
-                <div class="drawing-card">
-                    <img src="images/side-close.png" alt="Side view — foils retracted">
-                </div>
+        <div class="z-prospect-row">
+            <div class="z-prospect-img slide-from-left">
+                <img src="images/side-close.png" alt="Side view — foils retracted">
             </div>
-            <div class="prospect-text slide-from-right">
-                <p class="prospect-label">Side view — Foils retracted</p>
-                <h2 class="prospect-title">Invisible at rest</h2>
-                <p class="prospect-body">With foils fully retracted Zefiro navigates like a conventional
+            <div class="z-prospect-text slide-from-right">
+                <p class="z-prospect-label">Side view — Foils retracted</p>
+                <h2 class="z-prospect-title">Invisible at rest</h2>
+                <p class="z-prospect-body">With foils fully retracted, Zefiro navigates like a conventional
                     displacement hull — accessible in marinas, canals and shallow waters with no
                     infrastructure changes required. Draft under 0.5 m.</p>
             </div>
         </div>
 
-        <!-- Row 4: photo RIGHT, text LEFT -->
-        <div class="prospect-row prospect-row--reverse">
-            <div class="prospect-img slide-from-right">
-                <div class="drawing-card">
-                    <img src="images/side-open.png" alt="Side view — foils deployed">
-                </div>
+        <div class="z-prospect-row z-prospect-row--reverse">
+            <div class="z-prospect-img slide-from-right">
+                <img src="images/side-open.png" alt="Side view — foils deployed">
             </div>
-            <div class="prospect-text slide-from-left">
-                <p class="prospect-label">Side view — Foils deployed</p>
-                <h2 class="prospect-title">Take off.</h2>
-                <p class="prospect-body">Above 12 knots the foil system deploys automatically. The hull lifts
+            <div class="z-prospect-text slide-from-left">
+                <p class="z-prospect-label">Side view — Foils deployed</p>
+                <h2 class="z-prospect-title">Take off.</h2>
+                <p class="z-prospect-body">Above 12 knots the foil system deploys automatically. The hull lifts
                     clear of the water, vibration disappears, noise drops to near zero. Cruising speed of
                     20 knots on a single charge — 55 nautical miles of range.</p>
             </div>
@@ -174,43 +132,25 @@
 
     </section>
 
-
-
-    <!-- FOOTER -->
-    <footer class="footer mt-5">
-
-        <div class="bg-primary text-white text-center py-5">
-            <div class="container">
-                <h2 class="fw-light mb-2">Become a Partner</h2>
-                <p class="lead mb-4">We are looking for the right partner to bring Zefiro to the water.</p>
-                <a href="contact.htm" class="btn btn-light btn-lg px-4">Contact Us</a>
-            </div>
+    <div class="z-cta-band">
+        <div class="container">
+            <h2>Become a Partner</h2>
+            <p>We are looking for the right partner to bring Zefiro to the water.</p>
+            <a href="contact.htm" class="btn-z-light">Contact Us →</a>
         </div>
+    </div>
 
-        <div class="bg-dark text-white py-4">
-            <div class="container">
-                <div class="row align-items-center gy-3">
-                    <div class="col-md-4 text-center text-md-start">
-                        <img src="images/logo-w.png" alt="Zefiro" style="height:32px;">
-                    </div>
-                    <div class="col-md-4 text-center">
-                        <ul class="list-inline mb-0 small">
-                            <li class="list-inline-item"><a href="index.htm" class="text-white-50 text-decoration-none">Home</a></li>
-                            <li class="list-inline-item text-white-50">·</li>
-                            <li class="list-inline-item"><a href="aboutus.htm" class="text-white-50 text-decoration-none">About Us</a></li>
-                            <li class="list-inline-item text-white-50">·</li>
-                            <li class="list-inline-item"><a href="theproject.htm" class="text-white-50 text-decoration-none">The Project</a></li>
-                            <li class="list-inline-item text-white-50">·</li>
-                            <li class="list-inline-item"><a href="contact.htm" class="text-white-50 text-decoration-none">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4 text-center text-md-end">
-                        <small class="text-white-50">&copy; 2025 Zefiro. All rights reserved.</small>
-                    </div>
-                </div>
-            </div>
+    <footer class="z-footer">
+        <div class="z-footer-inner">
+            <img src="images/logo-w.png" alt="Zefiro">
+            <ul class="z-footer-nav">
+                <li><a href="index.htm">Home</a></li>
+                <li><a href="aboutus.htm">About Us</a></li>
+                <li><a href="theproject.htm">The Project</a></li>
+                <li><a href="contact.htm">Contact</a></li>
+            </ul>
+            <span class="z-footer-copy">&copy; 2025 Zefiro. All rights reserved.</span>
         </div>
-
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
@@ -218,5 +158,4 @@
         crossorigin="anonymous"></script>
     <script src="animations.js"></script>
 </body>
-
 </html>
