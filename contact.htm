@@ -1,144 +1,138 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ZEFIRO — Contact Us</title>
+    <title>ZEFIRO — Contact</title>
     <link rel="icon" type="image/png" href="images/logo.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="custom.css">
 </head>
-
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.htm"><img src="images/logo.png"> ZEFIRO</a>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid px-3 px-md-4">
+            <a class="navbar-brand" href="index.htm">
+                <img src="images/logo-w.png" alt="Zefiro">
+                ZEFIRO
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.htm">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="aboutus.htm">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="theproject.htm">The Project</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="contact.htm">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.htm">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- HERO -->
-    <section class="py-5 text-center container">
-        <div class="row">
-            <div class="col-lg-6 hero-content">
-                <h1 class="fw-light">
-                    <img src="images/logo-w.png" width="100px" style="vertical-align: middle;"> Contact Us
-                </h1>
-            </div>
+    <!-- PAGE HERO -->
+    <div class="z-page-hero">
+        <div class="z-page-hero-bg" style="background-image: url('images/bg-001.png');"></div>
+        <div class="z-page-hero-overlay"></div>
+        <div class="z-page-hero-content">
+            <p class="z-page-eyebrow">Get in touch</p>
+            <h1 class="z-page-title">Contact Us</h1>
+            <p class="z-page-subtitle">Partnership inquiries, technical questions, or press — we'd like to hear from you.</p>
         </div>
-    </section>
+    </div>
 
+    <!-- CONTACT SECTION -->
+    <div class="z-contact-section">
+        <div class="z-contact-inner">
 
-    <div class="container">
-
-        <section class="row">
-            <div class="col-lg-7">
-                <h5 class="mb-3">Fill out the contact form to get in touch with us</h5>
+            <!-- FORM -->
+            <div>
                 <form id="contact-form">
-
-                    <div class="row mb-3">
-                        <div class="col">
-                            <label for="firstName" class="form-label">First Name</label>
-                            <input type="text" class="form-control" id="firstName" name="first_name" placeholder="First name" required>
+                    <div class="z-form-row z-form-group">
+                        <div>
+                            <label class="z-form-label" for="firstName">First Name</label>
+                            <input type="text" class="z-form-input" id="firstName" name="first_name" placeholder="First name" required>
                         </div>
-                        <div class="col">
-                            <label for="lastName" class="form-label">Last Name</label>
-                            <input type="text" class="form-control" id="lastName" name="last_name" placeholder="Last name" required>
+                        <div>
+                            <label class="z-form-label" for="lastName">Last Name</label>
+                            <input type="text" class="z-form-input" id="lastName" name="last_name" placeholder="Last name" required>
                         </div>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="emailInput" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="emailInput" name="email" placeholder="mail@example.com" required>
+                    <div class="z-form-group">
+                        <label class="z-form-label" for="emailInput">Email</label>
+                        <input type="email" class="z-form-input" id="emailInput" name="email" placeholder="mail@example.com" required>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="phoneInput" class="form-label">Phone Number</label>
-                        <input type="tel" class="form-control" id="phoneInput" name="phone" placeholder="+39 333 1234 567">
+                    <div class="z-form-group">
+                        <label class="z-form-label" for="phoneInput">Phone Number</label>
+                        <input type="tel" class="z-form-input" id="phoneInput" name="phone" placeholder="+39 333 1234 567">
                     </div>
 
-                    <div class="form-floating mb-5">
-                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
-                            name="message" style="height: 150px" required></textarea>
-                        <label for="floatingTextarea2">Your Message</label>
+                    <div class="z-form-group">
+                        <label class="z-form-label" for="messageInput">Your Message</label>
+                        <textarea class="z-form-textarea" id="messageInput" name="message" placeholder="Tell us about your interest in Zefiro..." required></textarea>
                     </div>
 
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-primary" id="submit-btn">Send</button>
-                    </div>
-
+                    <button type="submit" class="btn-z-primary" id="submit-btn">Send message →</button>
                 </form>
-            </div>
-        </section>
 
-        <!-- SUCCESS MODAL -->
-        <div class="contact-modal-bg" id="contact-modal" aria-hidden="true">
-            <div class="contact-modal-box">
-                <div class="contact-modal-icon">✓</div>
-                <h4>Message sent!</h4>
-                <p>Thank you for reaching out. We'll get back to you as soon as possible.</p>
-                <button class="btn btn-primary mt-2" id="modal-close">Close</button>
-            </div>
-        </div>
-
-        <!-- ERROR TOAST -->
-        <div class="contact-toast" id="contact-toast">
-            Something went wrong — please try again.
-        </div>
-
-    </div> <!-- END CONTAINER -->
-
-
-    <!-- FOOTER -->
-    <footer class="footer mt-5">
-
-        <div class="bg-primary text-white text-center py-5">
-            <div class="container">
-                <h2 class="fw-light mb-2">Become a Partner</h2>
-                <p class="lead mb-4">We are looking for the right partner to bring Zefiro to the water.</p>
-                <a href="contact.htm" class="btn btn-light btn-lg px-4">Contact Us</a>
-            </div>
-        </div>
-
-        <div class="bg-dark text-white py-4">
-            <div class="container">
-                <div class="row align-items-center gy-3">
-                    <div class="col-md-4 text-center text-md-start">
-                        <img src="images/logo-w.png" alt="Zefiro" style="height:32px;">
-                    </div>
-                    <div class="col-md-4 text-center">
-                        <ul class="list-inline mb-0 small">
-                            <li class="list-inline-item"><a href="index.htm" class="text-white-50 text-decoration-none">Home</a></li>
-                            <li class="list-inline-item text-white-50">·</li>
-                            <li class="list-inline-item"><a href="aboutus.htm" class="text-white-50 text-decoration-none">About Us</a></li>
-                            <li class="list-inline-item text-white-50">·</li>
-                            <li class="list-inline-item"><a href="theproject.htm" class="text-white-50 text-decoration-none">The Project</a></li>
-                            <li class="list-inline-item text-white-50">·</li>
-                            <li class="list-inline-item"><a href="contact.htm" class="text-white-50 text-decoration-none">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4 text-center text-md-end">
-                        <small class="text-white-50">&copy; 2025 Zefiro. All rights reserved.</small>
+                <div class="z-contact-modal-bg" id="contact-modal" aria-hidden="true">
+                    <div class="z-contact-modal-box">
+                        <div class="z-contact-modal-icon">✓</div>
+                        <h4>Message sent!</h4>
+                        <p>Thank you for reaching out. We'll get back to you as soon as possible.</p>
+                        <button class="btn-z-primary mt-4" id="modal-close" style="margin-top:1.5rem;">Close</button>
                     </div>
                 </div>
-            </div>
-        </div>
 
+                <div class="z-contact-toast" id="contact-toast">
+                    Something went wrong — please try again.
+                </div>
+            </div>
+
+            <!-- INFO -->
+            <div>
+                <h3 class="z-contact-info-title">Let's build something together</h3>
+                <p class="z-contact-info-body">
+                    Zefiro is at the stage where the right industrial partnership
+                    makes the difference between a concept and a product in the water.
+                    We're open to conversations with manufacturers, investors, and operators
+                    who share our vision.
+                </p>
+
+                <div class="z-contact-detail">
+                    <span class="z-contact-detail-label">Project Type</span>
+                    <span class="z-contact-detail-value">Partnership / Licensing / Investment</span>
+                </div>
+
+                <div class="z-contact-detail">
+                    <span class="z-contact-detail-label">Development Stage</span>
+                    <span class="z-contact-detail-value">Design complete — seeking prototype partner</span>
+                </div>
+
+                <div class="z-contact-detail">
+                    <span class="z-contact-detail-label">Patent</span>
+                    <span class="z-contact-detail-value">Filed UIBM n° 102025000015892</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="z-footer">
+        <div class="z-footer-inner">
+            <img src="images/logo-w.png" alt="Zefiro">
+            <ul class="z-footer-nav">
+                <li><a href="index.htm">Home</a></li>
+                <li><a href="aboutus.htm">About Us</a></li>
+                <li><a href="theproject.htm">The Project</a></li>
+                <li><a href="contact.htm">Contact</a></li>
+            </ul>
+            <span class="z-footer-copy">&copy; 2025 Zefiro. All rights reserved.</span>
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
@@ -147,63 +141,35 @@
     <script src="animations.js"></script>
     <script>
     (function () {
-        const form      = document.getElementById('contact-form');
-        const modal     = document.getElementById('contact-modal');
-        const modalClose= document.getElementById('modal-close');
-        const toast     = document.getElementById('contact-toast');
-        const submitBtn = document.getElementById('submit-btn');
+        const form       = document.getElementById('contact-form');
+        const modal      = document.getElementById('contact-modal');
+        const modalClose = document.getElementById('modal-close');
+        const toast      = document.getElementById('contact-toast');
+        const submitBtn  = document.getElementById('submit-btn');
 
         form.addEventListener('submit', async function (e) {
             e.preventDefault();
-
-            // Loading state
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending…';
-
             const data = new FormData(form);
-
             try {
                 const res = await fetch('https://formspree.io/f/xjgdpezj', {
-                    method: 'POST',
-                    body: data,
+                    method: 'POST', body: data,
                     headers: { 'Accept': 'application/json' }
                 });
-
-                if (res.ok) {
-                    form.reset();
-                    showModal();
-                } else {
-                    showToast();
-                }
-            } catch (err) {
-                showToast();
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Send';
-            }
+                if (res.ok) { form.reset(); showModal(); }
+                else { showToast(); }
+            } catch (err) { showToast(); }
+            finally { submitBtn.disabled = false; submitBtn.textContent = 'Send message →'; }
         });
 
-        function showModal() {
-            modal.classList.add('active');
-            modal.setAttribute('aria-hidden', 'false');
-        }
-
-        function hideModal() {
-            modal.classList.remove('active');
-            modal.setAttribute('aria-hidden', 'true');
-        }
-
-        function showToast() {
-            toast.classList.add('active');
-            setTimeout(() => toast.classList.remove('active'), 4000);
-        }
+        function showModal()  { modal.classList.add('active'); modal.setAttribute('aria-hidden','false'); }
+        function hideModal()  { modal.classList.remove('active'); modal.setAttribute('aria-hidden','true'); }
+        function showToast()  { toast.classList.add('active'); setTimeout(() => toast.classList.remove('active'), 4000); }
 
         modalClose.addEventListener('click', hideModal);
-        modal.addEventListener('click', function (e) {
-            if (e.target === modal) hideModal();
-        });
+        modal.addEventListener('click', function (e) { if (e.target === modal) hideModal(); });
     })();
     </script>
 </body>
-
 </html>

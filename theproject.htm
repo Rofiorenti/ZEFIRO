@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,214 +9,239 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="custom.css">
 </head>
-
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.htm"><img src="images/logo.png"> ZEFIRO</a>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid px-3 px-md-4">
+            <a class="navbar-brand" href="index.htm">
+                <img src="images/logo-w.png" alt="Zefiro">
+                ZEFIRO
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.htm">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="aboutus.htm">About Us</a></li>
                     <li class="nav-item"><a class="nav-link active" href="theproject.htm">The Project</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.htm">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.htm">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <!-- PAGE HERO -->
+    <div class="z-page-hero">
+        <div class="z-page-hero-bg" style="background-image: url('images/bg-002.png');"></div>
+        <div class="z-page-hero-overlay"></div>
+        <div class="z-page-hero-content">
+            <p class="z-page-eyebrow">Development Status</p>
+            <h1 class="z-page-title">From design<br>to production.</h1>
+            <p class="z-page-subtitle">Four phases of engineering completed. Patent filed.
+                Now seeking the right industrial partner to build the first prototype.</p>
+        </div>
+    </div>
 
-    <!-- ① PROJECT STATUS HERO BAND -->
-    <div class="position-relative overflow-hidden p-3 p-md-5 text-center bg-body-tertiary">
-        <div class="col-12 col-lg-10 px-3 px-md-5 mx-auto py-4 py-md-5 hero-content">
-            <h1 class="display-5 fw-light mb-1">Project Status</h1>
-            <h3 class="fw-normal text-muted mb-4 fs-5">From design to production</h3>
+    <!-- STATUS CARDS -->
+    <div class="z-status-section">
+        <div class="z-status-section-inner">
+            <p class="z-section-eyebrow">Project Status</p>
+            <h2 class="z-section-title">What's been done</h2>
 
-            <!-- desktop: bootstrap grid (sm+) -->
-            <div class="row g-3 d-none d-sm-flex">
-                <div class="col-sm-6 col-lg-3">
-                    <div class="card h-100 status-card">
-                        <div class="card-body">
-                            <span class="status-badge">✓ Completed</span>
-                            <p class="card-text mt-2">Waterlines, hydrodynamics and targeted simulations.
-                                Geometry dedicated to foiling.</p>
-                        </div>
-                    </div>
+            <!-- Desktop grid -->
+            <div class="z-status-grid z-status-grid-desktop">
+                <div class="z-status-card fade-up">
+                    <div class="z-status-badge">Completed</div>
+                    <p>Waterlines, hydrodynamics and targeted simulations. Geometry dedicated to foiling.</p>
                 </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="card h-100 status-card">
-                        <div class="card-body">
-                            <span class="status-badge">✓ Completed</span>
-                            <p class="card-text mt-2">Foil movement system designed and validated. Patent
-                                filed (UIBM n° 102025000015892).</p>
-                        </div>
-                    </div>
+                <div class="z-status-card fade-up">
+                    <div class="z-status-badge">Completed</div>
+                    <p>Foil movement system designed and validated. Patent filed (UIBM n° 102025000015892).</p>
                 </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="card h-100 status-card">
-                        <div class="card-body">
-                            <span class="status-badge">✓ Completed</span>
-                            <p class="card-text mt-2">Propulsion system, batteries, flight control. Weight
-                                distribution, performance and technical specs finalized.</p>
-                        </div>
-                    </div>
+                <div class="z-status-card fade-up">
+                    <div class="z-status-badge">Completed</div>
+                    <p>Propulsion system, batteries, flight control. Weight distribution, performance and technical specs finalized.</p>
                 </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="card h-100 status-card">
-                        <div class="card-body">
-                            <span class="status-badge">✓ Completed</span>
-                            <p class="card-text mt-2">Mold engineering, ergonomics, materials, styling and
-                                deck layouts in both cabin and open versions.</p>
-                        </div>
-                    </div>
+                <div class="z-status-card fade-up">
+                    <div class="z-status-badge">Completed</div>
+                    <p>Mold engineering, ergonomics, materials, styling and deck layouts in both cabin and open versions.</p>
                 </div>
             </div>
 
-            <!-- mobile: horizontal scroll carousel (xs only) -->
-            <div class="status-carousel d-sm-none" id="status-carousel">
-                <div class="status-carousel-track">
-                    <div class="status-carousel-item">
-                        <div class="card h-100 status-card">
-                            <div class="card-body">
-                                <span class="status-badge">✓ Completed</span>
-                                <p class="card-text mt-2">Waterlines, hydrodynamics and targeted simulations.
-                                    Geometry dedicated to foiling.</p>
-                            </div>
+            <!-- Mobile carousel -->
+            <div class="z-status-carousel-wrap" id="status-carousel">
+                <div class="z-status-carousel-track">
+                    <div class="z-status-carousel-item">
+                        <div class="z-status-card">
+                            <div class="z-status-badge">Completed</div>
+                            <p>Waterlines, hydrodynamics and targeted simulations. Geometry dedicated to foiling.</p>
                         </div>
                     </div>
-                    <div class="status-carousel-item">
-                        <div class="card h-100 status-card">
-                            <div class="card-body">
-                                <span class="status-badge">✓ Completed</span>
-                                <p class="card-text mt-2">Foil movement system designed and validated. Patent
-                                    filed (UIBM n° 102025000015892).</p>
-                            </div>
+                    <div class="z-status-carousel-item">
+                        <div class="z-status-card">
+                            <div class="z-status-badge">Completed</div>
+                            <p>Foil movement system designed and validated. Patent filed (UIBM n° 102025000015892).</p>
                         </div>
                     </div>
-                    <div class="status-carousel-item">
-                        <div class="card h-100 status-card">
-                            <div class="card-body">
-                                <span class="status-badge">✓ Completed</span>
-                                <p class="card-text mt-2">Propulsion system, batteries, flight control. Weight
-                                    distribution and technical specs finalized.</p>
-                            </div>
+                    <div class="z-status-carousel-item">
+                        <div class="z-status-card">
+                            <div class="z-status-badge">Completed</div>
+                            <p>Propulsion system, batteries, flight control. Weight distribution and technical specs finalized.</p>
                         </div>
                     </div>
-                    <div class="status-carousel-item">
-                        <div class="card h-100 status-card">
-                            <div class="card-body">
-                                <span class="status-badge">✓ Completed</span>
-                                <p class="card-text mt-2">Mold engineering, ergonomics, materials, styling and
-                                    deck layouts in both cabin and open versions.</p>
-                            </div>
+                    <div class="z-status-carousel-item">
+                        <div class="z-status-card">
+                            <div class="z-status-badge">Completed</div>
+                            <p>Mold engineering, ergonomics, materials, styling and deck layouts in both versions.</p>
                         </div>
                     </div>
                 </div>
-                <!-- dots -->
-                <div class="status-dots">
-                    <span class="status-dot active" data-idx="0"></span>
-                    <span class="status-dot" data-idx="1"></span>
-                    <span class="status-dot" data-idx="2"></span>
-                    <span class="status-dot" data-idx="3"></span>
+                <div class="z-status-dots">
+                    <button class="z-status-dot active" data-idx="0"></button>
+                    <button class="z-status-dot" data-idx="1"></button>
+                    <button class="z-status-dot" data-idx="2"></button>
+                    <button class="z-status-dot" data-idx="3"></button>
                 </div>
             </div>
         </div>
     </div>
 
-
-    <!-- ② NEXT STEP — full-bleed dark band -->
-    <div class="nextstep-band">
-        <div class="nextstep-inner">
-            <div class="nextstep-left slide-from-left">
-                <p class="nextstep-eyebrow">What comes next</p>
-                <h2 class="nextstep-heading">Next Step</h2>
+    <!-- NEXT STEP -->
+    <div class="z-nextstep">
+        <div class="z-nextstep-inner">
+            <div class="z-nextstep-left slide-from-left">
+                <p class="z-section-eyebrow">What comes next</p>
+                <h2 class="z-nextstep-heading">Next Step</h2>
             </div>
-            <div class="nextstep-right slide-from-right">
-                <p class="nextstep-body">Scale prototype and open-water testing. Production setup.
+            <div class="z-nextstep-right slide-from-right">
+                <p class="z-nextstep-body">Scale prototype and open-water testing. Production setup.
                     Partnership or licensing agreement with an industrial manufacturer.</p>
-                <a href="contact.htm" class="btn btn-outline-light mt-3">Become a partner →</a>
+                <a href="contact.htm" class="btn-z-ghost">Become a partner →</a>
             </div>
         </div>
     </div>
 
+    <!-- WHERE ZEFIRO FLIES — scroll crossfade (desktop) + snap slideshow (mobile) -->
 
-    <!-- ③ USE CASES — photo background, full height -->
-    <div class="usecases-band">
-        <!-- background image layer -->
-        <div class="usecases-bg" style="background-image: url('images/side-fly-fast.png');"></div>
-        <!-- dark overlay -->
-        <div class="usecases-overlay"></div>
-        <!-- content -->
-        <div class="usecases-content">
-            <p class="usecases-eyebrow">Applications</p>
-            <h2 class="usecases-heading">Where Zefiro flies</h2>
-            <div class="row g-3 g-md-4 mt-3">
-                <div class="col-12 col-md-4">
-                    <div class="usecase-card slide-from-left">
-                        <div class="usecase-icon">🌊</div>
-                        <h5>Urban water taxi</h5>
-                        <p>Fast transport on rivers, lakes and waterways. Silent and non-invasive
+    <!-- Desktop: sticky crossfade track -->
+    <div class="z-fly-track">
+
+        <!-- sticky viewport -->
+        <div class="z-fly-sticky">
+
+            <!-- bg layers -->
+            <div class="z-fly-bg active" id="fly-bg-0" style="background-image: url('images/app-yacht.png');"></div>
+            <div class="z-fly-bg"        id="fly-bg-1" style="background-image: url('images/app-resort.png');"></div>
+            <div class="z-fly-bg"        id="fly-bg-2" style="background-image: url('images/app-taxi.png');"></div>
+
+            <!-- dark overlay -->
+            <div class="z-fly-overlay"></div>
+
+            <!-- text panels -->
+            <div class="z-fly-panel active" id="fly-text-0">
+                <p class="z-fly-counter">Applications — 1 / 3</p>
+                <h2 class="z-fly-location">Superyacht tender</h2>
+                <p class="z-fly-desc">High-performance, zero-emission tender for superyachts.
+                    Compact and fully compliant with protected marine areas.</p>
+            </div>
+            <div class="z-fly-panel" id="fly-text-1">
+                <p class="z-fly-counter">Applications — 2 / 3</p>
+                <h2 class="z-fly-location">Tourism &amp; Resort</h2>
+                <p class="z-fly-desc">Excursion tours and island connections on lakes and coastal destinations.
+                    An experience that becomes an attraction in itself.</p>
+            </div>
+            <div class="z-fly-panel" id="fly-text-2">
+                <p class="z-fly-counter">Applications — 3 / 3</p>
+                <h2 class="z-fly-location">Urban water taxi</h2>
+                <p class="z-fly-desc">Fast transport on rivers, lagoons and waterways. Silent and non-invasive
+                    in urban environments and zero-emission zones.</p>
+            </div>
+
+            <!-- dot nav -->
+            <div class="z-fly-dots">
+                <button class="z-fly-dot active" data-fly="0" aria-label="Lake Como"></button>
+                <button class="z-fly-dot"        data-fly="1" aria-label="Venice"></button>
+                <button class="z-fly-dot"        data-fly="2" aria-label="Capri"></button>
+            </div>
+
+        </div><!-- end sticky -->
+
+        <!-- invisible scroll triggers (one per scene × 100vh) -->
+        <div class="z-fly-triggers" aria-hidden="true">
+            <div class="z-fly-trigger" data-fly="0"></div>
+            <div class="z-fly-trigger" data-fly="1"></div>
+            <div class="z-fly-trigger" data-fly="2"></div>
+        </div>
+
+    </div><!-- end .z-fly-track -->
+
+    <!-- Mobile: snap slideshow -->
+    <div class="z-fly-mobile-section">
+        <div class="z-fly-mobile">
+            <div class="z-fly-mobile-slides" id="fly-mobile-slides">
+
+                <div class="z-fly-mobile-slide">
+                    <div class="z-fly-mobile-slide-bg" style="background-image: url('images/app-yacht.png');"></div>
+                    <div class="z-fly-mobile-slide-overlay"></div>
+                    <div class="z-fly-mobile-slide-text">
+                        <p class="z-fly-counter">Applications — 1 / 3</p>
+                        <h2 class="z-fly-location">Superyacht tender</h2>
+                        <p class="z-fly-desc">High-performance, zero-emission tender for superyachts.
+                            Compact and fully compliant with protected marine areas.</p>
+                    </div>
+                </div>
+
+                <div class="z-fly-mobile-slide">
+                    <div class="z-fly-mobile-slide-bg" style="background-image: url('images/app-resort.png');"></div>
+                    <div class="z-fly-mobile-slide-overlay"></div>
+                    <div class="z-fly-mobile-slide-text">
+                        <p class="z-fly-counter">Applications — 2 / 3</p>
+                        <h2 class="z-fly-location">Tourism &amp; Resort</h2>
+                        <p class="z-fly-desc">Excursion tours and island connections on lakes and coastal destinations.
+                            An experience that becomes an attraction in itself.</p>
+                    </div>
+                </div>
+
+                <div class="z-fly-mobile-slide">
+                    <div class="z-fly-mobile-slide-bg" style="background-image: url('images/app-taxi.png');"></div>
+                    <div class="z-fly-mobile-slide-overlay"></div>
+                    <div class="z-fly-mobile-slide-text">
+                        <p class="z-fly-counter">Applications — 3 / 3</p>
+                        <h2 class="z-fly-location">Urban water taxi</h2>
+                        <p class="z-fly-desc">Fast transport on rivers, lagoons and waterways. Silent and non-invasive
                             in urban environments and zero-emission zones.</p>
                     </div>
                 </div>
-                <div class="col-12 col-md-4">
-                    <div class="usecase-card slide-from-bottom">
-                        <div class="usecase-icon">⚓</div>
-                        <h5>Superyacht tender</h5>
-                        <p>High-performance, zero-emission tender. Compact and fully compliant
-                            with protected marine areas.</p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="usecase-card slide-from-right">
-                        <div class="usecase-icon">🏝</div>
-                        <h5>Tourism &amp; Resort</h5>
-                        <p>Excursion tours and island connections. An experience that becomes
-                            an attraction in itself.</p>
-                    </div>
-                </div>
+
+            </div>
+            <div class="z-fly-mobile-dots">
+                <button class="z-fly-mobile-dot active" data-idx="0"></button>
+                <button class="z-fly-mobile-dot"        data-idx="1"></button>
+                <button class="z-fly-mobile-dot"        data-idx="2"></button>
             </div>
         </div>
     </div>
 
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="bg-primary text-white text-center py-5">
-            <div class="container">
-                <h2 class="fw-light mb-2">Become a Partner</h2>
-                <p class="lead mb-4">We are looking for the right partner to bring Zefiro to the water.</p>
-                <a href="contact.htm" class="btn btn-light btn-lg px-4">Contact Us</a>
-            </div>
+    <div class="z-cta-band">
+        <div class="container">
+            <h2>Become a Partner</h2>
+            <p>We are looking for the right partner to bring Zefiro to the water.</p>
+            <a href="contact.htm" class="btn-z-light">Contact Us →</a>
         </div>
-        <div class="bg-dark text-white py-4">
-            <div class="container">
-                <div class="row align-items-center gy-3">
-                    <div class="col-md-4 text-center text-md-start">
-                        <img src="images/logo-w.png" alt="Zefiro" style="height:32px;">
-                    </div>
-                    <div class="col-md-4 text-center">
-                        <ul class="list-inline mb-0 small">
-                            <li class="list-inline-item"><a href="index.htm" class="text-white-50 text-decoration-none">Home</a></li>
-                            <li class="list-inline-item text-white-50">·</li>
-                            <li class="list-inline-item"><a href="aboutus.htm" class="text-white-50 text-decoration-none">About Us</a></li>
-                            <li class="list-inline-item text-white-50">·</li>
-                            <li class="list-inline-item"><a href="theproject.htm" class="text-white-50 text-decoration-none">The Project</a></li>
-                            <li class="list-inline-item text-white-50">·</li>
-                            <li class="list-inline-item"><a href="contact.htm" class="text-white-50 text-decoration-none">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4 text-center text-md-end">
-                        <small class="text-white-50">&copy; 2025 Zefiro. All rights reserved.</small>
-                    </div>
-                </div>
-            </div>
+    </div>
+
+    <footer class="z-footer">
+        <div class="z-footer-inner">
+            <img src="images/logo-w.png" alt="Zefiro">
+            <ul class="z-footer-nav">
+                <li><a href="index.htm">Home</a></li>
+                <li><a href="aboutus.htm">About Us</a></li>
+                <li><a href="theproject.htm">The Project</a></li>
+                <li><a href="contact.htm">Contact</a></li>
+            </ul>
+            <span class="z-footer-copy">&copy; 2025 Zefiro. All rights reserved.</span>
         </div>
     </footer>
 
