@@ -1740,3 +1740,173 @@ h1, h2, h3, h4, h5, h6 {
   .z-debut-grid { grid-template-columns: 1fr; gap: 2rem; }
   .z-debut { padding: 3.5rem 1.25rem 3rem; }
 }
+
+/* =============================================
+   CONSENT BAR (analytics.js)
+   ============================================= */
+.z-consent {
+  position: fixed;
+  left: 50%;
+  bottom: 1.25rem;
+  transform: translateX(-50%) translateY(140%);
+  z-index: 1080;
+  width: min(760px, calc(100vw - 2rem));
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.1rem 1.4rem;
+  background: var(--z-mid);
+  border: 1px solid var(--z-line);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.z-consent.visible {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+.z-consent-text {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: rgba(232, 236, 240, 0.72);
+}
+
+.z-consent-actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.z-consent-btn {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.7rem 1.3rem;
+  border: 1px solid var(--z-copper);
+  background: var(--z-copper);
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.z-consent-btn:hover { opacity: 0.85; }
+
+.z-consent-btn--ghost {
+  background: transparent;
+  color: rgba(232, 236, 240, 0.7);
+  border-color: rgba(232, 236, 240, 0.25);
+}
+
+.z-consent-btn--ghost:hover {
+  color: var(--z-slate);
+  border-color: rgba(232, 236, 240, 0.5);
+}
+
+@media (max-width: 767px) {
+  .z-consent {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    bottom: 0.75rem;
+  }
+  .z-consent-actions { justify-content: stretch; }
+  .z-consent-btn { flex: 1; }
+}
+
+/* =============================================
+   STATS GATE (stats.htm)
+   ============================================= */
+.z-gate {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 1.5rem 4rem;
+  background: var(--z-night);
+}
+
+.z-gate-inner {
+  width: 100%;
+  max-width: 540px;
+  text-align: center;
+}
+
+.z-gate-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--z-copper);
+  margin: 0 0 0.9rem;
+}
+
+.z-gate-title {
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  color: #fff;
+  margin: 0 0 1rem;
+}
+
+.z-gate-body {
+  color: rgba(232, 236, 240, 0.6);
+  font-size: 0.92rem;
+  margin: 0 0 2.25rem;
+}
+
+.z-gate-panel {
+  border: 1px solid var(--z-line);
+  background: var(--z-mid);
+  padding: 2rem 1.75rem;
+  text-align: left;
+}
+
+.z-gate-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(232, 236, 240, 0.07);
+  font-size: 0.85rem;
+}
+
+.z-gate-row:last-of-type { border-bottom: none; }
+
+.z-gate-row dt {
+  color: rgba(232, 236, 240, 0.45);
+  margin: 0;
+}
+
+.z-gate-row dd {
+  color: var(--z-slate);
+  margin: 0;
+  text-align: right;
+}
+
+.z-gate-cta { margin-top: 1.75rem; text-align: center; }
+
+.z-gate-warn {
+  margin: 2rem 0 0;
+  padding: 1rem 1.1rem;
+  border-left: 2px solid var(--z-copper);
+  background: rgba(201, 112, 58, 0.07);
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: rgba(232, 236, 240, 0.6);
+  text-align: left;
+}
+
+.z-gate-back {
+  display: inline-block;
+  margin-top: 2rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(232, 236, 240, 0.4);
+  text-decoration: none;
+}
+
+.z-gate-back:hover { color: var(--z-slate); }

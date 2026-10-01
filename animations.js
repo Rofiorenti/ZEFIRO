@@ -202,4 +202,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+
+    // ── 9. Hidden entry to the analytics page ────────────
+    // Five clicks on the footer logo within 3s open stats.htm.
+    // Deliberately undiscoverable by accident; it is not a security measure,
+    // the page itself holds no data (see stats.htm).
+    const footerLogo = document.querySelector('.z-footer-inner img');
+    if (footerLogo) {
+        let taps = 0;
+        let timer = null;
+
+        footerLogo.style.cursor = 'pointer';
+        footerLogo.addEventListener('click', () => {
+            taps++;
+            clearTimeout(timer);
+
+            if (taps >= 5) {
+                taps = 0;
+                window.location.href = 'stats.htm';
+                return;
+            }
+            timer = setTimeout(() => { taps = 0; }, 3000);
+        });
+    }
+
+
 });
