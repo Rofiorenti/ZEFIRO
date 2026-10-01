@@ -372,9 +372,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 767px) {
-  /* Su mobile la fascia è una striscia scorrevole: max-content impedisce alle card
-     di comprimersi, così restano leggibili e si scorrono di lato. Su desktop invece
-     devono starci tutte dentro i 1100px, quindi max-content vale solo qui. */
+  /* On mobile the strip scrolls sideways: max-content keeps the cards from
+     collapsing so they stay readable. On desktop they must all fit inside
+     the 1100px the layout was built for, so max-content applies only here. */
   .z-stats-inner { min-width: max-content; }
   .z-stat { min-width: 60vw; padding: 1.75rem 1.5rem; }
   .z-stats { position: relative; }
@@ -1594,7 +1594,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* =============================================
    PRESS BAND — "What they say about us"
-   Fascia sopra il footer, presente su tutte le pagine.
+   Sits above the footer on every page.
    ============================================= */
 .z-press {
   background: var(--z-mid);
@@ -1643,6 +1643,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .z-press-source em { font-style: normal; color: rgba(232, 236, 240, 0.75); }
+
+.z-press-note {
+  display: inline-block;
+  margin-top: 0.4rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: rgba(232, 236, 240, 0.35);
+}
 
 .z-press-link {
   display: inline-block;
