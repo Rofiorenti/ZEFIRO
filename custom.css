@@ -1591,3 +1591,144 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: var(--z-nav-h);
 }
 
+
+/* =============================================
+   PRESS BAND — "What they say about us"
+   Fascia sopra il footer, presente su tutte le pagine.
+   ============================================= */
+.z-press {
+  background: var(--z-mid);
+  border-top: 1px solid var(--z-line);
+  padding: 3.5rem 1.5rem;
+  text-align: center;
+}
+
+.z-press-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(232, 236, 240, 0.4);
+  margin: 0 0 1.5rem;
+}
+
+.z-press-logo {
+  display: inline-block;
+  margin-bottom: 1.75rem;
+}
+
+.z-press-logo img {
+  height: 30px;
+  width: auto;
+  opacity: 0.85;
+  transition: opacity 0.25s ease;
+}
+
+.z-press-logo:hover img { opacity: 1; }
+
+.z-press-quote {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.05rem, 2.2vw, 1.5rem);
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--z-slate);
+  max-width: 760px;
+  margin: 0 auto 1.25rem;
+}
+
+.z-press-source {
+  font-size: 0.85rem;
+  color: rgba(232, 236, 240, 0.5);
+  margin: 0 0 1.5rem;
+}
+
+.z-press-source em { font-style: normal; color: rgba(232, 236, 240, 0.75); }
+
+.z-press-link {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--z-copper);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: border-color 0.25s ease;
+}
+
+.z-press-link:hover {
+  color: var(--z-copper);
+  border-bottom-color: var(--z-copper);
+}
+
+@media (max-width: 767px) {
+  .z-press { padding: 2.75rem 1.25rem; }
+  .z-press-logo img { height: 24px; }
+}
+
+/* =============================================
+   PRESS GALLERY (theproject.htm)
+   ============================================= */
+.z-debut {
+  background: var(--z-night);
+  padding: 5rem 1.5rem 4rem;
+  border-top: 1px solid var(--z-line);
+}
+
+.z-debut-head {
+  max-width: 760px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.z-debut-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--z-copper);
+  margin: 0 0 0.9rem;
+}
+
+.z-debut-title {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin: 0 0 1rem;
+  color: #fff;
+}
+
+.z-debut-body {
+  color: rgba(232, 236, 240, 0.65);
+  margin: 0;
+}
+
+.z-debut-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.z-debut-shot { margin: 0; }
+
+.z-debut-shot img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 1px solid var(--z-line);
+}
+
+.z-debut-shot figcaption {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(232, 236, 240, 0.45);
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 991px) {
+  .z-debut-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .z-debut { padding: 3.5rem 1.25rem 3rem; }
+}
