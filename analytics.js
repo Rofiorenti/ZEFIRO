@@ -7,7 +7,7 @@
 // ── SETUP ────────────────────────────────────────────────────────────
 // Paste the Measurement ID of the GA4 property here (looks like G-XXXXXXXXXX).
 // While this is empty NOTHING is loaded: no Google script, no cookies, no banner.
-const GA_MEASUREMENT_ID = '';
+const GA_MEASUREMENT_ID = 'G-RPNCNS96VW';
 // ─────────────────────────────────────────────────────────────────────
 
 (function () {
