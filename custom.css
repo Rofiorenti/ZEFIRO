@@ -1601,7 +1601,14 @@ h1, h2, h3, h4, h5, h6 {
   border-top: 1px solid var(--z-line);
   padding: 3.5rem 1.5rem;
   text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.5rem;
 }
+
+.z-press-main { flex: 1 1 560px; max-width: 760px; }
 
 .z-press-label {
   font-size: 0.72rem;
@@ -1929,3 +1936,96 @@ h1, h2, h3, h4, h5, h6 {
 .z-footer-prefs:hover { color: rgba(232, 236, 240, 0.7); }
 
 .z-footer-prefs[hidden] { display: none; }
+
+/* =============================================
+   EVENT BANNER — right-hand side of the press band
+   Transparent: no panel, only a rule separating it from the quote.
+   ============================================= */
+.z-press-event {
+  flex: 0 1 330px;
+  min-width: 0;
+  text-align: left;
+  padding-left: 3.5rem;
+  border-left: 1px solid var(--z-line);
+}
+
+.z-press-event-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--z-copper);
+  margin: 0 0 0.75rem;
+}
+
+.z-press-event-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 300;
+  line-height: 1.2;
+  color: #fff;
+  margin: 0 0 0.75rem;
+}
+
+.z-press-event-meta {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: rgba(232, 236, 240, 0.5);
+  margin: 0 0 1.5rem;
+}
+
+/* Scrolling logos. The track holds the pair three times over and shifts by
+   exactly one third, so the loop has no visible seam. */
+.z-press-marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+}
+
+.z-press-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  width: max-content;
+  animation: z-press-scroll 18s linear infinite;
+}
+
+.z-press-marquee-track img {
+  opacity: 0.55;
+  flex-shrink: 0;
+}
+
+.z-press-marquee-salone {
+  height: 26px;
+  width: auto;
+  filter: brightness(0) invert(1);   /* navy artwork on a dark band */
+}
+
+.z-press-marquee-vf {
+  height: 17px;
+  width: auto;
+}
+
+@keyframes z-press-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-100% / 3)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .z-press-marquee-track { animation: none; }
+}
+
+@media (max-width: 991px) {
+  .z-press { flex-direction: column; gap: 2.5rem; }
+  .z-press-main { flex: 1 1 auto; }
+  .z-press-event {
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    padding-left: 0;
+    padding-top: 2.5rem;
+    border-left: none;
+    border-top: 1px solid var(--z-line);
+  }
+}
