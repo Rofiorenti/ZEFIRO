@@ -1910,3 +1910,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .z-gate-back:hover { color: var(--z-slate); }
+
+/* Cookie preferences — footer, revealed by analytics.js when collection is on */
+.z-footer-prefs {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(232, 236, 240, 0.3);
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.z-footer-prefs:hover { color: rgba(232, 236, 240, 0.7); }
+
+.z-footer-prefs[hidden] { display: none; }

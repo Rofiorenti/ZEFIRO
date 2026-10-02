@@ -74,13 +74,20 @@ const GA_MEASUREMENT_ID = 'G-GLS2MFQ65Q';
     }
 
     function buildBanner() {
+        if (document.querySelector('.z-consent')) return;   // già aperto
+
         const bar = document.createElement('div');
         bar.className = 'z-consent';
         bar.setAttribute('role', 'dialog');
         bar.setAttribute('aria-label', 'Cookie preferences');
+        const current = readConsent();
+        const state = current === 'granted'
+            ? ' You accepted them; you can withdraw that here.'
+            : (current === 'denied' ? ' You declined them; you can change that here.' : '');
+
         bar.innerHTML =
             '<p class="z-consent-text">We use analytics cookies to understand how this site is used. ' +
-            'They are only set if you accept, and we never use them for advertising.</p>' +
+            'They are only set if you accept, and we never use them for advertising.' + state + '</p>' +
             '<div class="z-consent-actions">' +
             '<button type="button" class="z-consent-btn z-consent-btn--ghost" data-consent="denied">Decline</button>' +
             '<button type="button" class="z-consent-btn" data-consent="granted">Accept</button>' +
@@ -101,6 +108,15 @@ const GA_MEASUREMENT_ID = 'G-GLS2MFQ65Q';
         // background tab, which would leave the bar stuck off-screen.
         setTimeout(() => bar.classList.add('visible'), 60);
     }
+
+    // Footer button: lets a visitor revisit the choice. Withdrawing consent has to
+    // be as easy as giving it, and until this existed a "Decline" was final —
+    // the bar never came back and there was no other way in.
+    const prefsButtons = document.querySelectorAll('[data-cookie-preferences]');
+    prefsButtons.forEach(function (btn) {
+        btn.hidden = false;                 // stays hidden when analytics is off
+        btn.addEventListener('click', buildBanner);
+    });
 
     const saved = readConsent();
     if (saved === 'granted') {
