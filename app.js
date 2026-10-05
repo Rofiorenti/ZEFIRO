@@ -328,7 +328,34 @@
     });
   }
 
-  // ── 11. hidden entry to the analytics page ───────────────
+  // ── 11. team ─────────────────────────────────────────────
+  // The three portraits are the same group shot with a different person
+  // left in colour, so picking a name just swaps the file.
+  const members = document.querySelectorAll('[data-member]');
+  const teamImg = document.querySelector('[data-team-img]');
+
+  if (members.length && teamImg) {
+    members.forEach(function (m) {
+      const btn = m.querySelector('.member-btn');
+      if (!btn) return;
+
+      btn.addEventListener('click', function () {
+        if (m.classList.contains('is-on')) return;
+
+        members.forEach(function (o) { o.classList.toggle('is-on', o === m); });
+
+        const src = m.dataset.img;
+        if (!src) return;
+
+        const next = new Image();
+        next.onload = function () { teamImg.src = src; teamImg.style.opacity = '1'; };
+        teamImg.style.opacity = '0';
+        next.src = src;
+      });
+    });
+  }
+
+  // ── 12. hidden entry to the analytics page ───────────────
   // Five clicks on the footer mark within 3s open stats.htm. Not a security
   // measure — the page it opens holds no figures, only a way through to the
   // Google dashboard, which has a real sign-in.

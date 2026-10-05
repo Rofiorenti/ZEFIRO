@@ -995,3 +995,122 @@ h1, h2, h3 {
 }
 
 .gate-back:hover { color: var(--paper); }
+
+/* =========================================================
+   TEAM
+   One group portrait shot three times over, each with a
+   different person left in colour — the picture changes with
+   the name you pick.
+   ========================================================= */
+.team {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: clamp(5rem, 12vh, 9rem) var(--gut);
+  border-top: 1px solid var(--faint);
+}
+
+.team-head { margin-bottom: 3rem; }
+.team-head h2 { font-size: clamp(2rem, 4vw, 3.4rem); margin-bottom: 1rem; }
+
+.team-note {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0;
+}
+
+.team-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.team-shot { margin: 0; position: sticky; top: 6rem; }
+
+.team-shot img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid var(--hair);
+  transition: opacity 0.45s var(--ease);
+}
+
+.team-list { list-style: none; margin: 0; padding: 0; }
+
+.member { border-top: 1px solid var(--faint); }
+.member:last-child { border-bottom: 1px solid var(--faint); }
+
+.member-btn {
+  display: grid;
+  gap: 0.3rem;
+  width: 100%;
+  text-align: left;
+  padding: 1.4rem 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.member-role {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.3s var(--ease);
+}
+
+.member-name {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: rgba(234, 242, 246, 0.45);
+  transition: color 0.3s var(--ease);
+}
+
+.member-btn:hover .member-name { color: var(--paper); }
+.member.is-on .member-name { color: var(--paper); }
+.member.is-on .member-role { color: var(--ice); }
+
+/* The bio belongs to the selected name only. The 0fr → 1fr collapse needs the
+   grid item itself to allow min-height: 0, which a bare text node cannot be
+   given — hence the span. Without it a closed bio keeps its full height. */
+.member-bio {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  max-width: 46ch;
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 0.5s var(--ease), opacity 0.4s var(--ease),
+              padding-bottom 0.5s var(--ease);
+  padding-bottom: 0;
+}
+
+.member-bio > span { min-height: 0; overflow: hidden; }
+
+.member.is-on .member-bio {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  padding-bottom: 1.6rem;
+}
+
+@media (max-width: 900px) {
+  .team-body { grid-template-columns: 1fr; }
+  .team-shot { position: relative; top: 0; }
+}
+
+/* Without JS, or with motion turned down, every bio stays readable. */
+@media (prefers-reduced-motion: reduce) {
+  .member-bio {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    padding-bottom: 1.6rem;
+    transition: none;
+  }
+}
