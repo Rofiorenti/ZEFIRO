@@ -1,4 +1,2 @@
 User-agent: *
 Disallow: /stats.htm
-
-Sitemap: https://www.flyzefiro.com/

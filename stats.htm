@@ -1,59 +1,57 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ZEFIRO — Site Analytics</title>
-    <meta name="robots" content="noindex, nofollow, noarchive">
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="custom.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZEFIRO — Site analytics</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid px-3 px-md-4">
-            <a class="navbar-brand" href="index.htm">
-                <img src="images/logo-w.png" alt="Zefiro">
-                ZEFIRO
-            </a>
-        </div>
-    </nav>
+<div class="grain" aria-hidden="true"></div>
 
-    <section class="z-gate">
-        <div class="z-gate-inner">
-            <p class="z-gate-label">Private area</p>
-            <h1 class="z-gate-title">Site analytics</h1>
-            <p class="z-gate-body">Traffic for flyzefiro.com is collected by Google Analytics 4 and
-                lives in the Google dashboard, behind your Google account. Sign in there to see
-                visitors, pages, sources, countries and devices.</p>
+<header class="topbar">
+  <a class="mark" href="index.html" aria-label="Zefiro, home">
+    <svg viewBox="0 0 34 34" aria-hidden="true"><path d="M5 25.5 29 8.5v4.2L11.6 25.5H29v4.2H5zM5 4.3h24v4.2H5z"/></svg>
+    <span>ZEFIRO</span>
+  </a>
+  <p class="topbar-meta"><span class="pulse"></span> Private area</p>
+</header>
 
-            <div class="z-gate-panel">
-                <dl class="z-gate-row"><dt>Property</dt><dd>flyzefiro.com &middot; G-GLS2MFQ65Q</dd></dl>
-                <dl class="z-gate-row"><dt>Collector</dt><dd>Google Analytics 4</dd></dl>
-                <dl class="z-gate-row"><dt>Collecting since</dt><dd>1 October 2026</dd></dl>
-                <dl class="z-gate-row"><dt>Cookies</dt><dd>only after consent</dd></dl>
+<section class="gate">
+  <div class="gate-inner">
+    <p class="eyebrow">Insights</p>
+    <h1>Site analytics</h1>
+    <p class="gate-lede">Traffic for flyzefiro.com is collected by Google Analytics 4 and lives
+      in the Google dashboard, behind your Google account. Sign in there for visitors, pages,
+      sources, countries and devices.</p>
 
-                <div class="z-gate-cta">
-                    <a class="btn-z-primary" href="https://analytics.google.com/analytics/web/"
-                       target="_blank" rel="noopener">Open the dashboard →</a>
-                </div>
-            </div>
+    <div class="gate-panel">
+      <dl class="gate-row"><dt>Property</dt><dd>Zefiro · G-GLS2MFQ65Q</dd></dl>
+      <dl class="gate-row"><dt>Stream</dt><dd>www.flyzefiro.com</dd></dl>
+      <dl class="gate-row"><dt>Collecting since</dt><dd>1 October 2026</dd></dl>
+      <dl class="gate-row"><dt>Cookies</dt><dd>only after consent</dd></dl>
 
-            <p class="z-gate-warn"><strong>This page is not protected.</strong> It is unlisted and
-                carries a noindex tag, but anyone who knows the address can open it. That is why it
-                holds no numbers: the data sits behind the Google sign-in, which is a real lock.
-                Do not put figures on this page.</p>
+      <div class="gate-cta">
+        <a class="btn btn-wide" href="https://analytics.google.com/analytics/web/"
+           target="_blank" rel="noopener"><span>Open the dashboard →</span></a>
+      </div>
+    </div>
 
-            <a class="z-gate-back" href="index.htm">← Back to the site</a>
-        </div>
-    </section>
+    <p class="gate-warn"><strong>This page is not protected.</strong> It is unlisted and carries
+      a noindex tag, but anyone who knows the address can open it. That is why it holds no
+      numbers: the data sits behind the Google sign-in, which is a real lock. Do not put
+      figures on this page.</p>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-    <script src="animations.js"></script>
-    <script src="analytics.js"></script>
+    <a class="gate-back" href="index.html">← Back to the site</a>
+  </div>
+</section>
+
+<script src="analytics.js"></script>
 </body>
 </html>
