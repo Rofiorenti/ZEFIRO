@@ -161,6 +161,10 @@
           const next = new Image();
           next.onload = function () {
             craftImg.src = src;
+            // Photographs fill the frame; the yard's drawings are far wider
+            // than it and would lose their bow and stern to the crop, so
+            // those are fitted whole instead.
+            craftImg.classList.toggle('is-drawing', e.target.dataset.fit === 'contain');
             craftCap.textContent = e.target.dataset.cap || '';
             craftImg.style.opacity = '1';
           };

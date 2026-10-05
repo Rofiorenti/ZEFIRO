@@ -429,6 +429,14 @@ h1, h2, h3 {
   transition: opacity 0.5s var(--ease);
 }
 
+/* General arrangement drawings are about 2.2:1 and 2.9:1 against a 1.6:1
+   frame — cropping them cuts the ends off the boat. */
+.craft-shot img.is-drawing {
+  object-fit: contain;
+  padding: 1.25rem;
+  background: rgba(111, 227, 255, 0.03);
+}
+
 .craft-shot figcaption {
   margin-top: 0.8rem;
   font-size: 0.7rem;
